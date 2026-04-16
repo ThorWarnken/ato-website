@@ -1,0 +1,3703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpha Tau Omega - Alpha Omega Chapter · University of Florida</title>
+  <meta name="description" content="Alpha Omega Chapter of Alpha Tau Omega at the University of Florida. Est. 1884. Love & Respect.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/About Us/ato-house-hero.png">
+  <style>
+    /* ========================================
+       CSS CUSTOM PROPERTIES
+       ======================================== */
+    :root {
+      --ato-azure: #487FC0;
+      --ato-gold: #FFAE3B;
+      --ato-dark-blue: #2F6BA4;
+      --ato-dark-gold: #D08735;
+      --ato-night: #2D2C2C;
+      --ato-grey: #D2D4D9;
+      --ato-evergreen: #34543D;
+      --ato-white: #FFFFFF;
+      --ato-off-white: #FAF9F6;
+      --ato-warm-white: #F8F7F4;
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+
+      --section-padding: clamp(4rem, 8vw, 8rem);
+      --container-max: 1200px;
+      --transition-base: 0.3s ease;
+    }
+
+    /* ========================================
+       RESET & BASE
+       ======================================== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--ato-night);
+      background: var(--ato-off-white);
+      line-height: 1.7;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+    }
+
+    /* ========================================
+       NAVIGATION
+       ======================================== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.5rem 0;
+      transition: background 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav.scrolled {
+      background: rgba(45, 44, 44, 0.95);
+      padding: 0.6rem 0;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom-color: rgba(255,255,255,0.05);
+    }
+
+    .nav-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-logo img {
+      height: 32px;
+      width: auto;
+      transition: height 0.4s ease;
+    }
+
+    .nav.scrolled .nav-logo img {
+      height: 28px;
+    }
+
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--ato-white);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-divider {
+      width: 1px;
+      height: 20px;
+      background: rgba(255,255,255,0.2);
+      margin: 0 0.75rem;
+    }
+
+    .nav-chapter {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.1rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.45rem 0.75rem;
+      border-radius: 3px;
+      transition: color var(--transition-base), background var(--transition-base);
+      white-space: nowrap;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--ato-white);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .nav-links a.active {
+      color: var(--ato-white);
+    }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 2px;
+      background: var(--ato-gold);
+      border-radius: 1px;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: var(--ato-white);
+      transition: transform var(--transition-base), opacity var(--transition-base);
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .mobile-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(47, 107, 164, 0.98);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .mobile-overlay.open {
+      display: flex;
+    }
+
+    .mobile-overlay a {
+      color: var(--ato-white);
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 500;
+      padding: 0.6rem 1.5rem;
+      transition: color var(--transition-base);
+    }
+
+    .mobile-overlay a:hover {
+      color: var(--ato-gold);
+    }
+
+    @media (max-width: 1023px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* ========================================
+       HERO SECTION
+       ======================================== */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 640px;
+      max-height: 1100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      animation: hero-zoom 20s ease-out forwards;
+    }
+
+    @keyframes hero-zoom {
+      from { transform: scale(1.08); }
+      to { transform: scale(1); }
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at center 55%, rgba(45, 44, 44, 0.2) 0%, rgba(45, 44, 44, 0.5) 100%),
+        linear-gradient(to top, rgba(45, 44, 44, 0.6) 0%, transparent 45%, rgba(45, 44, 44, 0.25) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      max-width: 900px;
+    }
+
+    .hero-crest {
+      width: 90px;
+      height: auto;
+      margin: 0 auto 1.5rem;
+      display: block;
+      filter: drop-shadow(0 2px 10px rgba(0,0,0,0.35));
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--ato-gold);
+      border: 1px solid rgba(255, 174, 59, 0.5);
+      padding: 0.45rem 1.5rem;
+      margin-bottom: 1.75rem;
+      background: rgba(0,0,0,0.2);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      color: var(--ato-white);
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 1.25rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.4);
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--ato-gold);
+      font-weight: 500;
+      display: block;
+      font-size: 0.55em;
+      margin-top: 0.15em;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    }
+
+    .hero-rule {
+      width: 48px;
+      height: 2px;
+      background: var(--ato-gold);
+      margin: 0 auto 1.5rem;
+      opacity: 0.6;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      color: rgba(255,255,255,0.85);
+      font-weight: 400;
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.7;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+    }
+
+    .hero-motto {
+      margin-top: 2.5rem;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--ato-gold);
+      letter-spacing: 0.06em;
+      text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-family: var(--font-body);
+      animation: pulse-down 2s ease-in-out infinite;
+    }
+
+    .scroll-indicator svg {
+      width: 20px;
+      height: 20px;
+      stroke: rgba(255,255,255,0.5);
+    }
+
+    @keyframes pulse-down {
+      0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+      50% { transform: translateX(-50%) translateY(6px); opacity: 1; }
+    }
+
+    /* ========================================
+       SECTION STYLES
+       ======================================== */
+    .section {
+      padding: var(--section-padding) 0;
+    }
+
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ato-azure);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-heading {
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      color: var(--ato-night);
+      margin-bottom: 1.5rem;
+      max-width: 700px;
+    }
+
+    .section-heading em {
+      font-style: italic;
+      color: var(--ato-dark-blue);
+    }
+
+    .section-body {
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 680px;
+      line-height: 1.8;
+    }
+
+    .section-body p + p {
+      margin-top: 1.25rem;
+    }
+
+    .bg-white { background: var(--ato-white); }
+    .bg-off-white { background: var(--ato-off-white); }
+    .bg-warm-white { background: var(--ato-warm-white); }
+    .bg-dark { background: var(--ato-night); }
+    .bg-blue { background: var(--ato-dark-blue); }
+
+    /* ========================================
+       ABOUT / STATS SECTION
+       ======================================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: start;
+      margin-top: 3rem;
+    }
+
+    .about-img {
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .about-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 4/5;
+    }
+
+    .about-img::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+      background: linear-gradient(to top, rgba(47, 107, 164, 0.08), transparent);
+      pointer-events: none;
+    }
+
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1px;
+      background: var(--ato-grey);
+      margin-top: 3.5rem;
+      border: 1px solid var(--ato-grey);
+    }
+
+    .stat-item {
+      background: var(--ato-white);
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--ato-dark-blue);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #888;
+    }
+
+    @media (max-width: 767px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-img img {
+        aspect-ratio: 16/10;
+      }
+    }
+
+    /* ========================================
+       PHOTO GALLERY (Brotherhood / Social)
+       ======================================== */
+    .gallery-intro {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 3rem;
+    }
+
+    .gallery-intro .section-label,
+    .gallery-intro .section-heading {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .photo-grid {
+      display: grid;
+      gap: 6px;
+    }
+
+    .photo-grid.brotherhood-grid {
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 240px 240px;
+      gap: 8px;
+    }
+
+    .photo-grid.brotherhood-grid .photo-item:nth-child(1) {
+      grid-row: 1 / 3;
+    }
+
+    .photo-grid.social-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: 350px;
+      gap: 8px;
+    }
+
+    .photo-grid.social-grid .photo-item img {
+      object-position: center center;
+    }
+
+    .photo-item {
+      overflow: hidden;
+      position: relative;
+      border-radius: 2px;
+    }
+
+    .photo-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .photo-item:hover img {
+      transform: scale(1.04);
+    }
+
+    @media (max-width: 767px) {
+      .photo-grid.brotherhood-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-auto-rows: 180px;
+      }
+      .photo-grid.brotherhood-grid .photo-item:nth-child(1) {
+        grid-column: 1 / -1;
+        grid-row: auto;
+      }
+      .photo-grid.social-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-auto-rows: 200px;
+      }
+    }
+
+    /* ========================================
+       PHILANTHROPY SECTION
+       ======================================== */
+    .philanthropy-section {
+      background: var(--ato-off-white);
+    }
+
+    .philanthropy-section .section-label {
+      color: var(--ato-evergreen);
+    }
+
+    .philanthropy-section .section-heading em {
+      color: var(--ato-evergreen);
+    }
+
+    .philanthropy-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+      margin-top: 2.5rem;
+    }
+
+    .philanthropy-featured {
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    }
+
+    .philanthropy-featured img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+
+    .philanthropy-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .philanthropy-stat {
+      padding: 1.5rem;
+      background: var(--ato-white);
+      border-left: 3px solid var(--ato-evergreen);
+    }
+
+    .philanthropy-stat .stat-number {
+      color: var(--ato-evergreen);
+      font-size: 1.75rem;
+    }
+
+    .philanthropy-photos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      margin-top: 3rem;
+    }
+
+    .philanthropy-photos .photo-item {
+      aspect-ratio: 4/3;
+    }
+
+    @media (max-width: 767px) {
+      .philanthropy-hero {
+        grid-template-columns: 1fr;
+      }
+      .philanthropy-stats {
+        grid-template-columns: 1fr;
+      }
+      .philanthropy-photos {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* ========================================
+       CAREER SECTION
+       ======================================== */
+    .career-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+      margin-top: 2.5rem;
+    }
+
+    .career-internship-img {
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+    }
+
+    .career-internship-img img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+
+    .career-portraits {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 2.5rem;
+    }
+
+    .career-portraits .photo-item {
+      aspect-ratio: 1;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .career-portraits .photo-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .career-portraits .photo-item:hover img {
+      transform: scale(1.04);
+    }
+
+    @media (max-width: 767px) {
+      .career-top {
+        grid-template-columns: 1fr;
+      }
+      .career-portraits {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* ========================================
+       MEMBER INFO SECTION
+       ======================================== */
+    .member-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .member-card {
+      padding: 2.25rem 2rem;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .member-card h4 {
+      font-size: 1.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .member-card p {
+      flex: 1;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 600px) {
+      .member-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .member-card {
+      background: var(--ato-white);
+      border: 1px solid var(--ato-grey);
+      border-top: 3px solid var(--ato-azure);
+      padding: 2rem;
+      transition: box-shadow var(--transition-base), transform var(--transition-base);
+    }
+
+    .member-card:hover {
+      box-shadow: 0 4px 20px rgba(72, 127, 192, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .member-card-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(72, 127, 192, 0.08);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      color: var(--ato-azure);
+    }
+
+    .member-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--ato-night);
+    }
+
+    .member-card p {
+      font-size: 0.9rem;
+      color: #777;
+      line-height: 1.6;
+    }
+
+    .member-card a.card-link {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--ato-azure);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-bottom: 1px solid transparent;
+      transition: border-color var(--transition-base);
+    }
+
+    .member-card a.card-link:hover {
+      border-color: var(--ato-azure);
+    }
+
+    /* ========================================
+       ALUMNI SECTION
+       ======================================== */
+    .alumni-section {
+      background: var(--ato-warm-white);
+    }
+
+    /* Tab Switcher */
+    .alumni-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin: 2.5rem 0 3rem;
+      border-bottom: 1px solid var(--ato-grey);
+      flex-wrap: wrap;
+    }
+
+    .alumni-tab {
+      background: none;
+      border: none;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #999;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      position: relative;
+      transition: color var(--transition-base);
+      margin-bottom: -1px;
+    }
+
+    .alumni-tab:hover {
+      color: var(--ato-dark-blue);
+    }
+
+    .alumni-tab.active {
+      color: var(--ato-dark-blue);
+    }
+
+    .alumni-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 20%;
+      right: 20%;
+      height: 3px;
+      background: var(--ato-gold);
+    }
+
+    .alumni-panel {
+      display: none;
+    }
+
+    .alumni-panel.active {
+      display: block;
+      animation: panel-fade 0.5s ease;
+    }
+
+    @keyframes panel-fade {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Legends - Featured Editorial Layout */
+    .legends-featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .legend-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--ato-night);
+      transition: transform var(--transition-base);
+    }
+
+    .legend-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .legend-card.hero-legend {
+      grid-column: 1 / -1;
+      aspect-ratio: 21/9;
+    }
+
+    .legend-card:not(.hero-legend) {
+      aspect-ratio: 4/5;
+    }
+
+    .legend-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+
+    .legend-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .legend-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: white;
+    }
+
+    .legend-card.hero-legend .legend-overlay {
+      padding: 3rem;
+    }
+
+    .legend-badge {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ato-gold);
+      margin-bottom: 0.75rem;
+      align-self: flex-start;
+      border-left: 2px solid var(--ato-gold);
+      padding-left: 0.75rem;
+    }
+
+    .legend-name {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .legend-card.hero-legend .legend-name {
+      font-size: clamp(2rem, 4.5vw, 3.75rem);
+    }
+
+    .legend-title {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.5;
+      max-width: 500px;
+    }
+
+    .legend-bio {
+      display: none;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.9);
+      margin-top: 0.75rem;
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    .legend-card:hover .legend-bio,
+    .legend-card.expanded .legend-bio {
+      display: block;
+    }
+
+    .legends-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .legends-row .legend-card {
+      aspect-ratio: 3/4;
+    }
+
+    @media (max-width: 900px) {
+      .legends-featured {
+        grid-template-columns: 1fr;
+      }
+      .legend-card.hero-legend {
+        aspect-ratio: 16/10;
+      }
+      .legends-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .legends-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Prominent Alumni - Original grid */
+    .alumni-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .alumni-card {
+      background: var(--ato-white);
+      border-top: 3px solid var(--ato-azure);
+      overflow: hidden;
+      transition: box-shadow var(--transition-base), transform var(--transition-base);
+    }
+
+    .alumni-card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+      transform: translateY(-3px);
+    }
+
+    .alumni-photo {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--ato-dark-blue), var(--ato-azure));
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .alumni-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+
+    .alumni-info {
+      padding: 1.75rem;
+    }
+
+    .alumni-info h4 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--ato-night);
+      margin-bottom: 0.15rem;
+    }
+
+    .alumni-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--ato-dark-gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .alumni-info p {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 767px) {
+      .alumni-grid {
+        grid-template-columns: 1fr;
+      }
+      .alumni-tab {
+        padding: 0.85rem 1.25rem;
+        font-size: 0.72rem;
+      }
+    }
+
+    /* ========================================
+       RESOURCE MODAL
+       ======================================== */
+    .resource-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(45, 44, 44, 0.85);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.25rem;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      animation: modal-fade 0.3s ease;
+    }
+
+    .resource-modal.open {
+      display: flex;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+    }
+
+    @keyframes modal-fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .resource-modal-inner {
+      background: var(--ato-white);
+      width: 100%;
+      max-width: 720px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 4px;
+      position: relative;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.35);
+      animation: modal-scale 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+    }
+
+    @keyframes modal-scale {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .resource-modal-header {
+      background: linear-gradient(135deg, var(--ato-dark-blue) 0%, var(--ato-azure) 100%);
+      padding: 2.5rem 2.5rem 2rem;
+      color: white;
+      position: relative;
+    }
+
+    .resource-modal-label {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ato-gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .resource-modal-header h3 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.75rem;
+      line-height: 1.15;
+    }
+
+    .resource-modal-header p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+      max-width: 520px;
+    }
+
+    .resource-modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 36px;
+      height: 36px;
+      border: none;
+      background: rgba(255,255,255,0.12);
+      color: white;
+      font-size: 1.25rem;
+      cursor: pointer;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--transition-base);
+      z-index: 1;
+    }
+
+    .resource-modal-close:hover {
+      background: rgba(255,255,255,0.25);
+    }
+
+    .resource-modal-body {
+      padding: 2.5rem;
+    }
+
+    .resource-links {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .resource-link {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.25rem;
+      border: 1px solid var(--ato-grey);
+      border-left: 3px solid var(--ato-azure);
+      background: var(--ato-off-white);
+      text-decoration: none;
+      color: inherit;
+      transition: background var(--transition-base), transform var(--transition-base), border-left-color var(--transition-base);
+    }
+
+    .resource-link:hover {
+      background: var(--ato-white);
+      border-left-color: var(--ato-gold);
+      transform: translateX(3px);
+    }
+
+    .resource-link-icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background: rgba(72, 127, 192, 0.1);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ato-azure);
+    }
+
+    .resource-link-content {
+      flex: 1;
+    }
+
+    .resource-link-content h5 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ato-night);
+      margin-bottom: 0.2rem;
+    }
+
+    .resource-link-content p {
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .resource-link-arrow {
+      color: var(--ato-azure);
+      flex-shrink: 0;
+      align-self: center;
+      transition: transform var(--transition-base);
+    }
+
+    .resource-link:hover .resource-link-arrow {
+      transform: translateX(4px);
+      color: var(--ato-gold);
+    }
+
+    .member-card[data-modal] {
+      cursor: pointer;
+    }
+
+    /* Alumni Network / BOT Modal */
+    .resource-modal.bot-modal .resource-modal-inner {
+      max-width: 920px;
+    }
+
+    .bot-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.85rem;
+      padding: 2rem 2.5rem 2.5rem;
+    }
+
+    .bot-card {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+      padding: 1rem;
+      border: 1px solid var(--ato-grey);
+      border-left: 3px solid var(--ato-azure);
+      background: var(--ato-white);
+      transition: border-left-color var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .bot-card:hover {
+      border-left-color: var(--ato-gold);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    }
+
+    .bot-card.chairman {
+      grid-column: 1 / -1;
+      border-left-color: var(--ato-gold);
+      background: linear-gradient(135deg, rgba(72, 127, 192, 0.04), rgba(255, 174, 59, 0.04));
+      padding: 1.25rem;
+    }
+
+    .bot-photo {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--ato-dark-blue), var(--ato-azure));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.35);
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .bot-card.chairman .bot-photo {
+      width: 72px;
+      height: 72px;
+      font-size: 1.4rem;
+    }
+
+    .bot-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .bot-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .bot-role {
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ato-dark-gold);
+      margin-bottom: 0.15rem;
+    }
+
+    .bot-name {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ato-night);
+      line-height: 1.2;
+    }
+
+    .bot-card.chairman .bot-name {
+      font-size: 1.35rem;
+    }
+
+    .bot-meta {
+      font-size: 0.78rem;
+      color: #888;
+      margin-top: 0.2rem;
+      line-height: 1.4;
+    }
+
+    .bot-contact {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .bot-contact a {
+      font-size: 0.78rem;
+      color: var(--ato-azure);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: color var(--transition-base);
+    }
+
+    .bot-contact a:hover {
+      color: var(--ato-dark-gold);
+    }
+
+    .bot-contact svg {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 700px) {
+      .bot-grid {
+        grid-template-columns: 1fr;
+        padding: 1.25rem;
+      }
+      .bot-card.chairman { grid-column: auto; }
+    }
+
+    /* Leadership Modal */
+    .resource-modal.leadership-modal .resource-modal-inner {
+      max-width: 880px;
+    }
+
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      padding: 2rem 2.5rem 2.5rem;
+    }
+
+    .leader-card {
+      background: var(--ato-white);
+      border: 1px solid var(--ato-grey);
+      border-left: 3px solid var(--ato-azure);
+      padding: 1.25rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: border-left-color var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .leader-card:hover {
+      border-left-color: var(--ato-gold);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+
+    .leader-card.featured {
+      grid-column: 1 / -1;
+      border-left-color: var(--ato-gold);
+      background: linear-gradient(135deg, rgba(72, 127, 192, 0.04), rgba(255, 174, 59, 0.04));
+    }
+
+    .leader-photo {
+      flex-shrink: 0;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--ato-dark-blue), var(--ato-azure));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.4);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 0.05em;
+      border: 2px solid var(--ato-white);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .leader-card.featured .leader-photo {
+      width: 88px;
+      height: 88px;
+      font-size: 1.75rem;
+    }
+
+    .leader-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .leader-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .leader-role {
+      font-family: var(--font-body);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ato-dark-gold);
+      margin-bottom: 0.25rem;
+    }
+
+    .leader-card.featured .leader-role {
+      color: var(--ato-dark-gold);
+    }
+
+    .leader-name {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--ato-night);
+      margin-bottom: 0.6rem;
+      line-height: 1.15;
+    }
+
+    .leader-card.featured .leader-name {
+      font-size: 1.5rem;
+    }
+
+    .leader-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .leader-contact a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      color: #555;
+      transition: color var(--transition-base);
+      word-break: break-word;
+    }
+
+    .leader-contact a:hover {
+      color: var(--ato-dark-blue);
+    }
+
+    .leader-contact svg {
+      flex-shrink: 0;
+      width: 13px;
+      height: 13px;
+      opacity: 0.7;
+      color: var(--ato-azure);
+    }
+
+    @media (max-width: 700px) {
+      .leadership-grid {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 1.25rem;
+      }
+      .leader-card.featured {
+        grid-column: auto;
+      }
+    }
+
+    /* Bylaws Modal - larger, document-style */
+    .resource-modal.bylaws-modal .resource-modal-inner {
+      max-width: 960px;
+    }
+
+    .bylaws-layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      min-height: 500px;
+    }
+
+    .bylaws-toc {
+      background: var(--ato-warm-white);
+      border-right: 1px solid var(--ato-grey);
+      padding: 1.75rem 1.25rem;
+      position: sticky;
+      top: 0;
+      max-height: calc(90vh - 200px);
+      overflow-y: auto;
+    }
+
+    .bylaws-toc-label {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ato-azure);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .bylaws-toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .bylaws-toc a {
+      display: block;
+      padding: 0.5rem 0.75rem;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      color: #666;
+      border-left: 2px solid transparent;
+      transition: color var(--transition-base), border-color var(--transition-base), background var(--transition-base);
+      line-height: 1.4;
+    }
+
+    .bylaws-toc a:hover,
+    .bylaws-toc a.active {
+      color: var(--ato-dark-blue);
+      border-left-color: var(--ato-gold);
+      background: rgba(72, 127, 192, 0.05);
+    }
+
+    .bylaws-content {
+      padding: 2.5rem 2.75rem;
+      overflow-y: auto;
+      max-height: calc(90vh - 200px);
+    }
+
+    .bylaws-preamble {
+      padding: 1.75rem;
+      background: linear-gradient(135deg, rgba(72, 127, 192, 0.05), rgba(255, 174, 59, 0.05));
+      border-left: 3px solid var(--ato-gold);
+      margin-bottom: 2.5rem;
+      font-family: var(--font-display);
+      font-style: italic;
+      color: #555;
+      line-height: 1.75;
+      font-size: 0.95rem;
+    }
+
+    .bylaws-preamble strong {
+      color: var(--ato-dark-blue);
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .bylaws-revised {
+      text-align: center;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ato-dark-gold);
+      margin-bottom: 2rem;
+    }
+
+    .bylaws-article {
+      margin-bottom: 3rem;
+      scroll-margin-top: 20px;
+    }
+
+    .bylaws-article-header {
+      border-bottom: 2px solid var(--ato-gold);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .bylaws-article-number {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--ato-dark-gold);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .bylaws-article h3 {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--ato-dark-blue);
+      line-height: 1.15;
+    }
+
+    .bylaws-section {
+      margin-bottom: 1.5rem;
+    }
+
+    .bylaws-section h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ato-night);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .bylaws-section h4 .bylaws-section-num {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ato-azure);
+      background: rgba(72, 127, 192, 0.08);
+      padding: 0.15rem 0.55rem;
+      border-radius: 2px;
+      margin-right: 0.6rem;
+      vertical-align: middle;
+    }
+
+    .bylaws-section p {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 0.6rem;
+    }
+
+    .bylaws-section ol,
+    .bylaws-section ul {
+      margin: 0.6rem 0 0.6rem 1.5rem;
+    }
+
+    .bylaws-section li {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 0.35rem;
+    }
+
+    .bylaws-officer-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem 1rem;
+      margin: 0.75rem 0 0.75rem 0;
+      padding: 1rem 1.25rem;
+      background: var(--ato-off-white);
+      border-radius: 2px;
+    }
+
+    .bylaws-officer-list span {
+      font-size: 0.88rem;
+      color: #444;
+      padding: 0.15rem 0;
+    }
+
+    .bylaws-officer-list .num {
+      color: var(--ato-dark-gold);
+      font-weight: 700;
+      font-family: var(--font-display);
+      margin-right: 0.35rem;
+    }
+
+    /* Custom scrollbar for bylaws */
+    .bylaws-content::-webkit-scrollbar,
+    .bylaws-toc::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .bylaws-content::-webkit-scrollbar-track,
+    .bylaws-toc::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .bylaws-content::-webkit-scrollbar-thumb,
+    .bylaws-toc::-webkit-scrollbar-thumb {
+      background: var(--ato-grey);
+      border-radius: 3px;
+    }
+
+    .bylaws-content::-webkit-scrollbar-thumb:hover,
+    .bylaws-toc::-webkit-scrollbar-thumb:hover {
+      background: var(--ato-azure);
+    }
+
+    @media (max-width: 767px) {
+      .bylaws-layout {
+        grid-template-columns: 1fr;
+      }
+      .bylaws-toc {
+        border-right: none;
+        border-bottom: 1px solid var(--ato-grey);
+        position: static;
+        max-height: 200px;
+      }
+      .bylaws-content {
+        padding: 1.5rem 1.25rem;
+      }
+      .bylaws-officer-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ========================================
+       ATO FOR LIFE SECTION
+       ======================================== */
+    .forlife-section {
+      background: var(--ato-night);
+      color: rgba(255,255,255,0.85);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .forlife-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at top right, rgba(72, 127, 192, 0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .forlife-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .forlife-header .section-label {
+      color: var(--ato-gold);
+    }
+
+    .forlife-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+      color: var(--ato-white);
+      margin-bottom: 1.25rem;
+      line-height: 1.1;
+    }
+
+    .forlife-header h2 em {
+      font-style: italic;
+      color: var(--ato-gold);
+    }
+
+    .forlife-header .section-divider {
+      margin: 1rem auto 1.5rem;
+    }
+
+    .forlife-header p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .forlife-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: clamp(2rem, 4vw, 4rem);
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 4rem;
+    }
+
+    .forlife-carousel {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      aspect-ratio: 4/3;
+      background: var(--ato-night);
+    }
+
+    .carousel-track {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.7s ease;
+      pointer-events: none;
+    }
+
+    .carousel-slide.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+      padding: 2.5rem 1.75rem 1.5rem;
+      color: white;
+    }
+
+    .carousel-caption .caption-year {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--ato-gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .carousel-caption .caption-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.3rem;
+      line-height: 1.2;
+    }
+
+    .carousel-caption .caption-desc {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.5;
+      max-width: 520px;
+    }
+
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      backdrop-filter: blur(8px);
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      transition: background var(--transition-base), transform var(--transition-base);
+    }
+
+    .carousel-arrow:hover {
+      background: rgba(255, 174, 59, 0.9);
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .carousel-arrow.prev {
+      left: 1rem;
+    }
+
+    .carousel-arrow.next {
+      right: 1rem;
+    }
+
+    .carousel-dots {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      gap: 0.5rem;
+      z-index: 3;
+    }
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.35);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background var(--transition-base), width var(--transition-base);
+    }
+
+    .carousel-dot.active {
+      background: var(--ato-gold);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    .carousel-counter {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.7);
+      z-index: 3;
+      background: rgba(0,0,0,0.35);
+      padding: 0.35rem 0.65rem;
+      border-radius: 2px;
+      backdrop-filter: blur(6px);
+    }
+
+    .forlife-text h3 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      color: var(--ato-white);
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
+    }
+
+    .forlife-text h3 em {
+      font-style: italic;
+      color: var(--ato-gold);
+    }
+
+    .forlife-text p {
+      font-size: 0.98rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .forlife-text p + p {
+      margin-top: 1rem;
+    }
+
+    .forlife-benefits {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .benefit-card {
+      padding: 2rem 1.5rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-top: 2px solid var(--ato-gold);
+      transition: background var(--transition-base), transform var(--transition-base);
+    }
+
+    .benefit-card:hover {
+      background: rgba(255,255,255,0.06);
+      transform: translateY(-3px);
+    }
+
+    .benefit-number {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--ato-gold);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .benefit-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ato-white);
+      margin-bottom: 0.6rem;
+    }
+
+    .benefit-card p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 900px) {
+      .forlife-grid {
+        grid-template-columns: 1fr;
+      }
+      .forlife-benefits {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .forlife-benefits {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ========================================
+       FOOTER
+       ======================================== */
+    .footer {
+      background: var(--ato-night);
+      color: rgba(255,255,255,0.7);
+      padding: clamp(3rem, 6vw, 5rem) 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand .nav-logo-text {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .footer-tagline {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--ato-gold);
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .footer h5 {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ato-white);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer ul {
+      list-style: none;
+    }
+
+    .footer ul li + li {
+      margin-top: 0.6rem;
+    }
+
+    .footer ul a {
+      font-size: 0.9rem;
+      transition: color var(--transition-base);
+    }
+
+    .footer ul a:hover {
+      color: var(--ato-gold);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color var(--transition-base), background var(--transition-base);
+    }
+
+    .footer-social a:hover {
+      border-color: var(--ato-gold);
+      background: rgba(255, 174, 59, 0.1);
+    }
+
+    .footer-social svg {
+      width: 16px;
+      height: 16px;
+      fill: rgba(255,255,255,0.7);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    @media (max-width: 767px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ========================================
+       SECTION DIVIDER
+       ======================================== */
+    .section-divider {
+      width: 48px;
+      height: 2px;
+      background: var(--ato-gold);
+      margin: 1rem 0 1.5rem;
+    }
+
+    /* ========================================
+       LIGHTBOX
+       ======================================== */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(45, 44, 44, 0.95);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+      padding: 2rem;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 2px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--transition-base);
+    }
+
+    .lightbox-close:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* ========================================
+       ANIMATIONS
+       ======================================== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ========================================
+       BACK TO TOP
+       ======================================== */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 44px;
+      height: 44px;
+      background: var(--ato-azure);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition-base), background var(--transition-base);
+      z-index: 500;
+      box-shadow: 0 2px 12px rgba(72, 127, 192, 0.3);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .back-to-top:hover {
+      background: var(--ato-dark-blue);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================
+       NAVIGATION
+       ======================================== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">
+        <img src="assets/About Us/ATO-dark-blue-yellow@2x.png" alt="ATO Logo">
+        <span class="nav-divider"></span>
+        <span class="nav-chapter">Alpha Omega</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#brotherhood">Brotherhood</a></li>
+        <li><a href="#philanthropy">Philanthropy</a></li>
+        <li><a href="#career">Career</a></li>
+        <li><a href="#social">Social</a></li>
+        <li><a href="#members">Member Info</a></li>
+        <li><a href="#alumni">Alumni</a></li>
+        <li><a href="#forlife">ATO For Life</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileNav">
+    <a href="#home">Home</a>
+    <a href="#brotherhood">Brotherhood</a>
+    <a href="#philanthropy">Philanthropy</a>
+    <a href="#career">Career</a>
+    <a href="#social">Social</a>
+    <a href="#members">Member Info</a>
+    <a href="#alumni">Alumni</a>
+    <a href="#forlife">ATO For Life</a>
+  </div>
+
+  <!-- ========================================
+       HERO SECTION
+       ======================================== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <img src="assets/About Us/ato-house-hero.png" alt="Alpha Tau Omega Chapter House at the University of Florida" fetchpriority="high">
+    </div>
+    <div class="hero-content">
+      <img src="assets/About Us/ato-crest-clean.png" alt="Alpha Tau Omega Coat of Arms" class="hero-crest">
+      <span class="hero-badge">Alpha Omega Chapter &middot; University of Florida</span>
+      <h1>Alpha Tau Omega<em>Est. 1884 &middot; Gainesville, Florida</em></h1>
+      <div class="hero-rule"></div>
+      <p class="hero-sub">One of the oldest fraternity chapters at the University of Florida. 140 years of brotherhood, leadership, and the pursuit of something greater.</p>
+      <div class="hero-motto">Love &amp; Respect</div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Explore</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- ========================================
+       ABOUT US SECTION
+       ======================================== -->
+  <section class="section bg-white" id="about">
+    <div class="container">
+      <div class="fade-in">
+        <span class="section-label">About Us</span>
+        <h2 class="section-heading">A Legacy Rooted in <em>Brotherhood</em></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="about-grid fade-in">
+        <div>
+          <div class="section-body">
+            <p>The Alpha Omega chapter of Alpha Tau Omega was chartered at the University of Florida on February 26, 1884, making it one of the oldest fraternity chapters on campus and among the earliest ATO chapters in the nation. For over 140 years, Alpha Omega has cultivated leaders, athletes, scholars, and public servants who carry the fraternity's founding principles forward.</p>
+            <p>Our chapter of 155 members represents a cross-section of the University of Florida's best: brothers involved in student government, the IFC executive board, varsity athletics, and dozens of campus organizations. We take pride in a brotherhood built on genuine connection - from intramural tournaments to community service projects, every event strengthens the bonds that define us.</p>
+            <p>Alpha Tau Omega was founded in 1865 at the Virginia Military Institute by Otis Allan Glazebrook to heal the divisions of the Civil War. That founding vision - to know no North, no South, no East, no West, but to know man as man - still guides us. Our creed of Love and Respect is not just a slogan; it is the standard by which we hold ourselves and each other accountable.</p>
+          </div>
+        </div>
+        <div class="about-img">
+          <img src="assets/About Us/IMG_7540.jpg" alt="Brothers of Alpha Tau Omega at the chapter house" loading="lazy" decoding="async">
+        </div>
+      </div>
+
+      <!-- Stats Strip -->
+      <div class="stats-strip fade-in">
+        <div class="stat-item">
+          <div class="stat-number">1884</div>
+          <div class="stat-label">Founded</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">155+</div>
+          <div class="stat-label">Active Members</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">$127K+</div>
+          <div class="stat-label">Raised This Year</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">140+</div>
+          <div class="stat-label">Years of Legacy</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1865</div>
+          <div class="stat-label">National Founding</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       BROTHERHOOD SECTION
+       ======================================== -->
+  <section class="section bg-off-white" id="brotherhood">
+    <div class="container">
+      <div class="gallery-intro fade-in">
+        <span class="section-label">Brotherhood</span>
+        <h2 class="section-heading">More Than a <em>Chapter</em></h2>
+        <div class="section-divider" style="margin-left:auto;margin-right:auto;"></div>
+        <p class="section-body" style="text-align:center;margin:0 auto;">Our 155 brothers are involved across campus and connected through the things that matter.</p>
+      </div>
+
+      <div class="photo-grid brotherhood-grid fade-in">
+        <div class="photo-item" data-lightbox>
+          <img src="assets/Brotherhood/IMG_7564.jpg" alt="Gameday crowd at the ATO house" loading="lazy" decoding="async">
+        </div>
+        <div class="photo-item" data-lightbox>
+          <img src="assets/About Us/IMG_7540.jpg" alt="Brothers dressed up at the chapter house" loading="lazy" decoding="async">
+        </div>
+        <div class="photo-item" data-lightbox>
+          <img src="assets/Brotherhood/IMG_7541.jpg" alt="Brothers on a trip" loading="lazy" decoding="async">
+        </div>
+        <div class="photo-item" data-lightbox>
+          <img src="assets/Philanthropy/DSC_3957.jpg" alt="Brothers at a chapter dinner" loading="lazy" decoding="async">
+        </div>
+        <div class="photo-item" data-lightbox>
+          <img src="assets/About Us/IMG_7556.jpg" alt="Chapter photo in front of the house" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       PHILANTHROPY SECTION
+       ======================================== -->
+  <section class="section philanthropy-section" id="philanthropy">
+    <div class="container">
+      <div class="fade-in">
+        <span class="section-label">Philanthropy</span>
+        <h2 class="section-heading">A Cause That Hits <em>Close to Home</em></h2>
+        <div class="section-divider" style="background:var(--ato-evergreen);"></div>
+      </div>
+
+      <div class="philanthropy-hero fade-in">
+        <div class="philanthropy-featured">
+          <img src="assets/Philanthropy/IMG_7543.jpg" alt="AdventHealth Orlando Casino Night - $127,721 raised" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <div class="section-body">
+            <p>In 2022, a brother in our chapter was diagnosed with cancer. The men of Alpha Omega responded by launching the AdventHealth Orlando Casino Night, a philanthropy event dedicated to funding cancer research at AdventHealth Orlando.</p>
+            <p>Now in its fourth year, Casino Night raised $127,000 this year alone for AdventHealth Orlando's cancer research department. The event brings together the Greek community and beyond for an evening of casino-style entertainment in support of a cause that hits close to home.</p>
+            <p>Beyond Casino Night, our chapter gives back through community service projects, volunteer days, and partnerships with local organizations in Gainesville.</p>
+          </div>
+
+          <div class="philanthropy-stats">
+            <div class="philanthropy-stat">
+              <div class="stat-number">$127K+</div>
+              <div class="stat-label">Raised This Year</div>
+            </div>
+            <div class="philanthropy-stat">
+              <div class="stat-number">4</div>
+              <div class="stat-label">Years Running</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="philanthropy-photos fade-in">
+        <div class="photo-item" data-lightbox>
+          <img src="assets/Philanthropy/IMG_7550.jpg" alt="Brothers presenting check to AdventHealth Orlando" loading="lazy" decoding="async">
+        </div>
+        <div class="photo-item" data-lightbox>
+          <img src="assets/Philanthropy/IMG_7562.jpg" alt="Check presentation at AdventHealth" loading="lazy" decoding="async">
+        </div>
+        <div class="photo-item" data-lightbox>
+          <img src="assets/Philanthropy/IMG_7557.jpg" alt="Donation check presentation" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       CAREER SECTION
+       ======================================== -->
+  <section class="section bg-white" id="career">
+    <div class="container">
+      <div class="fade-in">
+        <span class="section-label">Career</span>
+        <h2 class="section-heading">America's <em>Leadership Development</em> Fraternity</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="career-top fade-in">
+        <div>
+          <div class="section-body">
+            <p>Alpha Tau Omega's mission as America's Leadership Development Fraternity extends beyond the college years. The Alpha Omega chapter provides brothers with mentorship, networking, and professional development opportunities that prepare them for careers across every industry.</p>
+            <p>From alumni-led workshops and resume reviews to industry panels featuring brothers who have built careers in law, medicine, finance, technology, construction, and public service, our career programming connects current members with the resources and relationships they need to compete at the highest level.</p>
+            <p>The bonds of brotherhood become a professional network that lasts a lifetime.</p>
+          </div>
+        </div>
+        <div class="career-internship-img" data-lightbox>
+          <img src="assets/Career/IMG_7545.jpg" alt="ATO Summer Internship placements 2025" loading="lazy" decoding="async">
+        </div>
+      </div>
+
+      <div class="career-portraits fade-in">
+        <div class="photo-item" data-lightbox>
+          <img src="assets/Career/IMG_7547.jpg" alt="Brother at Morgan Stanley" loading="lazy" decoding="async">
+        </div>
+        <div class="photo-item" data-lightbox>
+          <img src="assets/Career/IMG_7554.jpg" alt="Brother at JP Morgan Chase" loading="lazy" decoding="async">
+        </div>
+        <div class="photo-item" data-lightbox>
+          <img src="assets/Career/IMG_7555.jpg" alt="Brother at EY" loading="lazy" decoding="async">
+        </div>
+        <div class="photo-item" data-lightbox>
+          <img src="assets/Career/IMG_7546.jpg" alt="Brother at KPMG" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SOCIAL SECTION
+       ======================================== -->
+  <section class="section bg-dark" id="social" style="color: rgba(255,255,255,0.85);">
+    <div class="container">
+      <div class="gallery-intro fade-in">
+        <span class="section-label" style="color:var(--ato-gold);">Social</span>
+        <h2 class="section-heading" style="color:var(--ato-white);"><em style="color:var(--ato-gold);">Social</em> Events</h2>
+        <div class="section-divider" style="margin-left:auto;margin-right:auto;"></div>
+        <p class="section-body" style="text-align:center;margin:0 auto;color:rgba(255,255,255,0.6);">We host some of the biggest events on campus every semester.</p>
+      </div>
+
+      <div class="photo-grid social-grid fade-in">
+        <div class="photo-item" data-lightbox>
+          <img src="assets/Social/DSC_9146_Original.jpg" alt="Aerial view of ATO event" loading="lazy" decoding="async">
+        </div>
+        <div class="photo-item" data-lightbox>
+          <img src="assets/Social/DSC_9231_Original.jpg" alt="DJ at ATO" loading="lazy" decoding="async">
+        </div>
+        <div class="photo-item" data-lightbox>
+          <img src="assets/Social/312A5219.JPG" alt="ATO Vikings themed social" loading="lazy" decoding="async">
+        </div>
+        <div class="photo-item" data-lightbox>
+          <img src="assets/Social/DSC_0205_Original.jpg" alt="Crowd at ATO event" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       MEMBER INFO SECTION
+       ======================================== -->
+  <section class="section bg-off-white" id="members">
+    <div class="container">
+      <div class="fade-in">
+        <span class="section-label">Member Info</span>
+        <h2 class="section-heading">Chapter <em>Resources</em></h2>
+        <div class="section-divider"></div>
+        <p class="section-body">Quick access to the tools, documents, and contacts you need as an active member of Alpha Omega.</p>
+      </div>
+
+      <div class="member-cards fade-in">
+        <div class="member-card" data-modal="bylaws">
+          <div class="member-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h4>Chapter Bylaws</h4>
+          <p>Alpha Omega Chapter Bylaws - Revised Spring 2026. The governing rules of our chapter.</p>
+          <a href="#" class="card-link">Read Bylaws &rarr;</a>
+        </div>
+
+        <div class="member-card" data-modal="leadership">
+          <div class="member-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h4>Contact Leadership</h4>
+          <p>Reach out to the executive board - President, VP, Treasurer, Secretary, and committee chairs.</p>
+          <a href="#" class="card-link">Executive Board &rarr;</a>
+        </div>
+
+        <div class="member-card" data-modal="national-resources">
+          <div class="member-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h4>National Resources</h4>
+          <p>ATO national headquarters, the ATO Foundation, scholarship opportunities, and more.</p>
+          <a href="#" class="card-link">Explore Resources &rarr;</a>
+        </div>
+
+        <div class="member-card" data-modal="alumni-network">
+          <div class="member-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h4>Alumni Network</h4>
+          <p>Board of Trustees roster, alumni contacts, and the people who keep Alpha Omega running.</p>
+          <a href="#" class="card-link">View Board of Trustees &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       ALUMNI SECTION
+       ======================================== -->
+  <section class="section alumni-section" id="alumni">
+    <div class="container">
+      <div class="fade-in">
+        <span class="section-label">About Our Alumni</span>
+        <h2 class="section-heading">Men Who Shaped <em>History</em></h2>
+        <div class="section-divider"></div>
+        <p class="section-body">From Heisman Trophy winners and Florida governors to Supreme Court justices and industry leaders, the men of Alpha Omega have left an indelible mark on the University of Florida and the world beyond it.</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="alumni-tabs fade-in" role="tablist">
+        <button class="alumni-tab active" data-tab="legends" role="tab" aria-selected="true">Alumni Legends</button>
+        <button class="alumni-tab" data-tab="prominent" role="tab" aria-selected="false">Prominent Alumni</button>
+      </div>
+
+      <!-- Legends Panel -->
+      <div class="alumni-panel active" id="panel-legends" role="tabpanel">
+        <div class="legends-featured fade-in">
+          <!-- Hero Legend: Spurrier -->
+          <article class="legend-card hero-legend">
+            <img src="assets/Career/i.jpg" alt="Steve Spurrier coaching the Florida Gators">
+            <div class="legend-overlay">
+              <span class="legend-badge">Class of 1966 &middot; Heisman Trophy</span>
+              <h3 class="legend-name">Steve Spurrier</h3>
+              <p class="legend-title">The only player-turned-head-coach to win both a Heisman Trophy and a National Championship at Florida. Six-time SEC Champion. College Football Hall of Famer.</p>
+              <p class="legend-bio">Spurrier won the 1966 Heisman as quarterback - the first in UF history - then returned to lead the Gators to six SEC titles and the 1996 National Championship as head coach from 1990 to 2001. His legacy is woven into the fabric of both UF athletics and Alpha Tau Omega.</p>
+            </div>
+          </article>
+
+          <!-- Lawton Chiles -->
+          <article class="legend-card">
+            <img src="assets/About Our Alumni/lawton-chiles.jpg" alt="Governor Lawton Chiles" style="object-position: center 10%;">
+            <div class="legend-overlay">
+              <span class="legend-badge">Class of 1953 &middot; Governor of Florida</span>
+              <h3 class="legend-name">Lawton Chiles</h3>
+              <p class="legend-title">U.S. Senator for 18 years. Governor of Florida from 1991 to 1998.</p>
+              <p class="legend-bio">Known as "Walkin' Lawton" after walking 1,003 miles across Florida to campaign, Chiles served three terms in the U.S. Senate before returning home to serve two terms as Governor.</p>
+            </div>
+          </article>
+
+          <!-- Stephen O'Connell -->
+          <article class="legend-card">
+            <img src="assets/About Our Alumni/stephen-oconnell.jpg" alt="Stephen C. O'Connell" style="object-position: center 20%;">
+            <div class="legend-overlay">
+              <span class="legend-badge">Class of 1940 &middot; Chief Justice &middot; UF President</span>
+              <h3 class="legend-name">Stephen C. O'Connell</h3>
+              <p class="legend-title">Chief Justice of the Florida Supreme Court. 6th President of the University of Florida. The O'Connell Center bears his name.</p>
+              <p class="legend-bio">Alpha Omega chapter president, student body president, and SEC middleweight boxing champion during his time at UF. He went on to lead the Florida Supreme Court before returning to UF as its sixth president.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="legends-row fade-in">
+          <!-- Cris Collinsworth -->
+          <article class="legend-card">
+            <img src="assets/Career/Cris_Collinsworth_Super_Bowl_XLIII_kqqFq4RdG3pl.webp" alt="Cris Collinsworth" style="object-position: center 20%;">
+            <div class="legend-overlay">
+              <span class="legend-badge">Class of 1981 &middot; Pro Bowler &middot; Broadcaster</span>
+              <h3 class="legend-name">Cris Collinsworth</h3>
+              <p class="legend-title">Three-time Pro Bowl wide receiver. Lead NFL analyst for NBC's Sunday Night Football.</p>
+            </div>
+          </article>
+
+          <!-- Tommy Townsend -->
+          <article class="legend-card">
+            <img src="assets/Career/IMG_7571.jpg" alt="Tommy Townsend with Lombardi Trophy" style="object-position: center 25%;">
+            <div class="legend-overlay">
+              <span class="legend-badge">Class of 2020 &middot; 2&times; Super Bowl Champion</span>
+              <h3 class="legend-name">Tommy Townsend</h3>
+              <p class="legend-title">Back-to-back Super Bowl Champion. First-Team All-Pro punter. Walked on at Florida, became an NFL star.</p>
+            </div>
+          </article>
+
+          <!-- Stephen Grimes -->
+          <article class="legend-card">
+            <img src="assets/About Our Alumni/stephen-grimes.jpg" alt="Stephen H. Grimes" style="object-position: center 25%;">
+            <div class="legend-overlay">
+              <span class="legend-badge">Class of 1951 &middot; Chief Justice</span>
+              <h3 class="legend-name">Stephen H. Grimes</h3>
+              <p class="legend-title">Chief Justice of the Florida Supreme Court from 1994 to 1996. Served on the court from 1987 until his retirement.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Prominent Panel -->
+      <div class="alumni-panel" id="panel-prominent" role="tabpanel">
+        <div class="alumni-grid fade-in">
+          <!-- Scott Moss -->
+          <div class="alumni-card">
+            <div class="alumni-photo">
+              <img src="assets/About Our Alumni/scott-moss.jpg" alt="Scott Moss" loading="lazy" decoding="async" style="object-position: center 20%;">
+            </div>
+            <div class="alumni-info">
+              <h4>Scott Moss</h4>
+              <div class="alumni-title">CEO, Moss Construction</div>
+              <p>Scott Moss leads Moss, a $3 billion national construction firm employing over 5,000 people. Inducted into the UF Rinker School of Construction Management Hall of Fame in 2024.</p>
+            </div>
+          </div>
+
+          <!-- John Morgan -->
+          <div class="alumni-card">
+            <div class="alumni-photo">
+              <img src="assets/About Our Alumni/john-morgan.jpg" alt="John Morgan" loading="lazy" decoding="async" style="object-position: center 10%;">
+            </div>
+            <div class="alumni-info">
+              <h4>John Morgan</h4>
+              <div class="alumni-title">Founder, Morgan &amp; Morgan</div>
+              <p>Founded Morgan &amp; Morgan, one of the largest personal injury law firms in the United States. UF College of Law graduate known for his philanthropy, advocacy, and outsized impact on Florida's legal landscape.</p>
+            </div>
+          </div>
+
+          <!-- Blake Dowling -->
+          <div class="alumni-card">
+            <div class="alumni-photo">
+              <img src="assets/About Our Alumni/IMG_0421.jpg" alt="Blake Dowling" loading="lazy" decoding="async" style="object-position: center 20%;">
+            </div>
+            <div class="alumni-info">
+              <h4>Blake Dowling</h4>
+              <div class="alumni-title">CEO, Aegis Business Technologies</div>
+              <p>CEO of Aegis Business Technologies, a Tallahassee-based managed IT services firm. Named to the 2025 Gator 100, the UF Alumni Association's list of fastest-growing businesses worldwide led by UF alumni.</p>
+            </div>
+          </div>
+
+          <!-- Forrest Sawyer -->
+          <div class="alumni-card">
+            <div class="alumni-photo">
+              <img src="assets/About Our Alumni/forrest-sawyer-2.jpg" alt="Forrest Sawyer" loading="lazy" decoding="async" style="object-position: center 15%;">
+            </div>
+            <div class="alumni-info">
+              <h4>Forrest Sawyer</h4>
+              <div class="alumni-title">ABC News Correspondent &middot; 8&times; Emmy Winner</div>
+              <p>Distinguished broadcast journalist and former ABC News correspondent who anchored ABC World News Tonight and Nightline. Eight-time Emmy Award winner, Peabody, and Edward R. Murrow recipient.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       ATO FOR LIFE SECTION
+       ======================================== -->
+  <section class="section forlife-section" id="forlife">
+    <div class="container">
+      <div class="forlife-header fade-in">
+        <span class="section-label">ATO For Life</span>
+        <h2>A Brotherhood That <em>Never Ends</em></h2>
+        <div class="section-divider" style="background:var(--ato-gold);"></div>
+        <p>Alpha Tau Omega is for life. The connections made in Gainesville become a network that extends across careers, cities, and generations - backed by the Life Loyal Tau program, the ATO Foundation, and a 160-year national legacy.</p>
+      </div>
+
+      <div class="forlife-grid fade-in">
+        <div class="forlife-carousel" id="reunionCarousel">
+          <div class="carousel-track">
+            <div class="carousel-slide active">
+              <img src="assets/About Our Alumni/reunion-arizona-2007.jpg" alt="Alumni at the 2007 BCS National Championship in Arizona">
+              <div class="carousel-caption">
+                <div class="caption-year">2007 &middot; Glendale, Arizona</div>
+                <div class="caption-title">BCS National Championship</div>
+                <div class="caption-desc">Early '90s pledge classes reunited at the University of Phoenix Stadium for the Florida vs. Ohio State National Championship game.</div>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/About Our Alumni/reunion-islamorada-2.jpg" alt="Fall '90 pledge class reunion in Islamorada">
+              <div class="carousel-caption">
+                <div class="caption-year">Fall '90 Pledge Class &middot; Annual Reunion</div>
+                <div class="caption-title">Islamorada, Florida Keys</div>
+                <div class="caption-desc">Thirty-five years of brotherhood. The Fall '90 pledge class still gathers every year in the Keys.</div>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/About Our Alumni/reunion-cheeca.jpg" alt="Alumni reunion at Cheeca Lodge in Islamorada">
+              <div class="carousel-caption">
+                <div class="caption-year">Alumni Reunion</div>
+                <div class="caption-title">Cheeca Lodge, Islamorada</div>
+                <div class="caption-desc">A fresh catch on the dock. Alumni reunions in the Florida Keys are a cherished Alpha Omega tradition.</div>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/About Our Alumni/alumni-tailgate-fsu.png" alt="Alumni tailgate for the Florida vs FSU game honoring Brother Quinn Toulon">
+              <div class="carousel-caption">
+                <div class="caption-year">Beat FSU &middot; Tailgate</div>
+                <div class="caption-title">For Brother Quinn Toulon (1972 - 2023)</div>
+                <div class="caption-desc">Alumni gathered to tailgate the Florida vs. FSU game in honor of their brother. Love &amp; Respect.</div>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/About Our Alumni/alumni-tailgate-swamp.png" alt="Alumni tailgating at The Swamp">
+              <div class="carousel-caption">
+                <div class="caption-year">Gameday &middot; The Swamp</div>
+                <div class="caption-title">Alumni at the Florida Gators</div>
+                <div class="caption-desc">Returning to Gainesville for a home game is a rite of passage for every Alpha Omega brother.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-dots">
+            <button class="carousel-dot active" data-slide="0" aria-label="Slide 1"></button>
+            <button class="carousel-dot" data-slide="1" aria-label="Slide 2"></button>
+            <button class="carousel-dot" data-slide="2" aria-label="Slide 3"></button>
+            <button class="carousel-dot" data-slide="3" aria-label="Slide 4"></button>
+            <button class="carousel-dot" data-slide="4" aria-label="Slide 5"></button>
+          </div>
+
+          <button class="carousel-arrow prev" aria-label="Previous slide">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="carousel-arrow next" aria-label="Next slide">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+
+          <div class="carousel-counter"><span id="carouselCurrent">01</span> / <span id="carouselTotal">02</span></div>
+        </div>
+
+        <div class="forlife-text">
+          <h3>From college brothers to <em>lifelong friends.</em></h3>
+          <p>Every year, alumni from the Alpha Omega chapter gather - at reunions in the Florida Keys, tailgates at the Swamp, and trips across the country. Pledge classes from the 1950s to the 2020s stay in touch, do business together, and show up for each other's weddings, births, and milestones.</p>
+          <p>When you join Alpha Omega, you don't just join a chapter. You join a network that lasts a lifetime.</p>
+        </div>
+      </div>
+
+      <div class="forlife-benefits fade-in">
+        <div class="benefit-card">
+          <span class="benefit-number">01</span>
+          <h4>Leadership Development</h4>
+          <p>ATO is America's Leadership Development Fraternity. National programs like LeaderShape and the Leadership Academy are available only to Taus.</p>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-number">02</span>
+          <h4>Life Loyal Tau</h4>
+          <p>Lifetime membership in ATO's global alumni association. Stay connected to over 250,000 living brothers across every major industry.</p>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-number">03</span>
+          <h4>Career Network</h4>
+          <p>Alumni-led workshops, resume reviews, and direct referrals into law, finance, medicine, construction, technology, and public service.</p>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-number">04</span>
+          <h4>ATO Foundation</h4>
+          <p>Scholarships, educational programming, and emergency assistance for brothers - funded by alumni who invest in the next generation of Taus.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="nav-logo-text">ΑΤΩ</span>
+          <div class="footer-tagline">"Love &amp; Respect"</div>
+          <p>Alpha Omega Chapter of Alpha Tau Omega at the University of Florida. Chartered February 26, 1884. One of the oldest fraternity chapters on campus and one of the earliest ATO chapters in the nation.</p>
+        </div>
+
+        <div>
+          <h5>Navigate</h5>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#brotherhood">Brotherhood</a></li>
+            <li><a href="#philanthropy">Philanthropy</a></li>
+            <li><a href="#career">Career</a></li>
+            <li><a href="#social">Social</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="#members">Member Info</a></li>
+            <li><a href="#alumni">Alumni</a></li>
+            <li><a href="https://ato.org" target="_blank" rel="noopener">ATO National</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5>Connect</h5>
+          <ul>
+            <li><a href="https://instagram.com/uf_ato" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="#" target="_blank" rel="noopener">Alumni Group</a></li>
+            <li><a href="mailto:ato@ufl.edu">Email Us</a></li>
+          </ul>
+          <div class="footer-social">
+            <a href="https://instagram.com/uf_ato" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>Alpha Omega Chapter &middot; Alpha Tau Omega &middot; Gainesville, FL</span>
+        <span>&copy; 2024 Alpha Tau Omega - Alpha Omega Chapter</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- National Resources Modal -->
+  <div class="resource-modal" id="modal-national-resources">
+    <div class="resource-modal-inner">
+      <button class="resource-modal-close" aria-label="Close">&times;</button>
+      <div class="resource-modal-header">
+        <span class="resource-modal-label">Member Info</span>
+        <h3>ATO National Resources</h3>
+        <p>Everything you need to connect with Alpha Tau Omega National Headquarters, the ATO Foundation, and the broader brotherhood.</p>
+      </div>
+      <div class="resource-modal-body">
+        <div class="resource-links">
+
+          <a href="https://ato.org" class="resource-link" target="_blank" rel="noopener">
+            <div class="resource-link-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="resource-link-content">
+              <h5>ATO National Headquarters</h5>
+              <p>Main ATO website. News, chapter directory, events, and official announcements.</p>
+            </div>
+            <svg class="resource-link-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+
+          <a href="https://ato.org/ato-foundation/" class="resource-link" target="_blank" rel="noopener">
+            <div class="resource-link-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div class="resource-link-content">
+              <h5>ATO Foundation</h5>
+              <p>The charitable arm of ATO. Donate, give to scholarships, or support emergency assistance programs.</p>
+            </div>
+            <svg class="resource-link-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+
+          <a href="https://ato.org/life-loyal-tau" class="resource-link" target="_blank" rel="noopener">
+            <div class="resource-link-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="resource-link-content">
+              <h5>Life Loyal Tau</h5>
+              <p>Lifetime alumni membership program. Stay connected to 250,000+ brothers worldwide.</p>
+            </div>
+            <svg class="resource-link-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+
+          <a href="https://ato.org/events-and-programs/" class="resource-link" target="_blank" rel="noopener">
+            <div class="resource-link-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="resource-link-content">
+              <h5>Events &amp; Leadership Programs</h5>
+              <p>LeaderShape, Leadership Academy, Congress, and regional conferences open to all Taus.</p>
+            </div>
+            <svg class="resource-link-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+
+          <a href="https://ato.org/wp-content/uploads/2024/10/ATO-Green-Book-2023-10.pdf" class="resource-link" target="_blank" rel="noopener">
+            <div class="resource-link-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+            <div class="resource-link-content">
+              <h5>The Green Book (New Member Manual)</h5>
+              <p>The official ATO new member manual. History, ritual, creed, and brotherhood standards.</p>
+            </div>
+            <svg class="resource-link-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+
+          <a href="https://ato.org/whyjoin/" class="resource-link" target="_blank" rel="noopener">
+            <div class="resource-link-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <div class="resource-link-content">
+              <h5>Why Join ATO</h5>
+              <p>Benefits of ATO membership, leadership opportunities, and what makes ATO different.</p>
+            </div>
+            <svg class="resource-link-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Alumni Network / BOT Modal -->
+  <div class="resource-modal bot-modal" id="modal-alumni-network">
+    <div class="resource-modal-inner">
+      <button class="resource-modal-close" aria-label="Close">&times;</button>
+      <div class="resource-modal-header">
+        <span class="resource-modal-label">Alpha Omega Corporation</span>
+        <h3>Board of Trustees</h3>
+        <p>The alumni board that governs and supports the Alpha Omega Chapter. These brothers give their time, resources, and leadership to keep our chapter strong.</p>
+      </div>
+
+      <div class="bot-grid">
+
+        <div class="bot-card chairman">
+          <div class="bot-photo"><img src="assets/BOT/john-marion.jpg" alt="John B. Marion IV"></div>
+          <div class="bot-info">
+            <div class="bot-role">Chairman &middot; Board of Trustees</div>
+            <div class="bot-name">John B. Marion IV</div>
+            <div class="bot-meta">Class of '79 &middot; Attorney &amp; Mediator &middot; Upchurch Watson White &amp; Max</div>
+            <div class="bot-contact">
+              <a href="mailto:jmarion@uww-adr.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>jmarion@uww-adr.com</a>
+              <a href="tel:+15617189316"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.14.94.36 1.86.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.95.34 1.87.56 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(561) 718-9316</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bot-card"><div class="bot-photo">HW</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Howe Q. Wallace</div><div class="bot-meta">Class of '74 &middot; Former National President, Alpha Tau Omega</div><div class="bot-contact"><a href="mailto:hwallace@palletone.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+18635811190"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(863) 581-1190</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">DP</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Donald R. Prokes</div><div class="bot-meta">Class of '69 &middot; Retired Teacher &amp; Coach</div><div class="bot-contact"><a href="mailto:donprokes@hotmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+14075929212"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(407) 592-9212</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">MC</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Mark G. Carpenter</div><div class="bot-meta">Class of '82 &middot; Real Estate Appraiser &middot; Pinel &amp; Carpenter</div><div class="bot-contact"><a href="mailto:markc@pinelcarpenter.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+14076482199"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(407) 648-2199</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">FM</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Frederick J. Mills</div><div class="bot-meta">Class of '81 &middot; Attorney &middot; Morrison &amp; Mills, PA</div><div class="bot-contact"><a href="mailto:mills@morrisonandmills.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+18134931347"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(813) 493-1347</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">DC</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Donald R. Cameron CPA</div><div class="bot-meta">Class of '80 &middot; Retired CPA &middot; Former PwC Partner</div><div class="bot-contact"><a href="mailto:Drcameron13@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+19045714652"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(904) 571-4652</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">PN</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Patrick Ryan Nutt</div><div class="bot-meta">Class of '03 &middot; Commercial Real Estate &middot; SRS Real Estate Partners</div><div class="bot-contact"><a href="mailto:patricknutt@aol.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+17034342599"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(703) 434-2599</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">PB</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Paul M. Beam</div><div class="bot-meta">Class of '71 &middot; Professional Geologist &middot; US Dept. of Energy</div><div class="bot-contact"><a href="mailto:silverg@myyahoo.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+13019922777"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(301) 992-2777</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">EJ</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Eric E. Johnson</div><div class="bot-meta">Class of '01 &middot; Financial Advisor &middot; UBS Financial Services</div><div class="bot-contact"><a href="mailto:eejuf@aol.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+18638993092"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(863) 899-3092</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">BH</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Bernard R. Hamel</div><div class="bot-meta">Class of '79 &middot; Marketing &amp; Sales &middot; Syngenta</div><div class="bot-contact"><a href="mailto:berniehamel10@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+18139249098"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(813) 924-9098</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">SF</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Scott T. Fote</div><div class="bot-meta">Class of '94 &middot; Architect/Engineer &middot; President/CEO, RLF</div><div class="bot-contact"><a href="mailto:scott_fote@rlfae.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+14073994385"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(407) 399-4385</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">EL</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Erik Lindquist</div><div class="bot-meta">Class of '02 &middot; Construction Manager &middot; Brasfield &amp; Gorrie</div><div class="bot-contact"><a href="mailto:elindquist@brasfieldgorrie.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+13213038155"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(321) 303-8155</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">SW</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Steven Will</div><div class="bot-meta">Class of '06/'08 &middot; General Contractor &middot; DPR Construction</div><div class="bot-contact"><a href="mailto:stevenw@dpr.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+14045691282"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(404) 569-1282</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">JH</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Jon A. Hammond</div><div class="bot-meta">Class of '99 &middot; Insurance &middot; Florida Market President, IMA Financial</div><div class="bot-contact"><a href="mailto:jhammond@w3ins.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+17274037867"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(727) 403-7867</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">GE</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">George W. Etheridge Jr.</div><div class="bot-meta">Class of '79 &middot; Medical Device &middot; Founder/CEO, Precision Orthopedics</div><div class="bot-contact"><a href="mailto:getheri1@tampabay.rr.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+18137481220"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(813) 748-1220</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">MU</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Michael L. Underwood</div><div class="bot-meta">Class of '82 &middot; General Contractor &middot; Owner/President</div><div class="bot-contact"><a href="mailto:mike@mlunderwoodconstruction.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+13868462481"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(386) 846-2481</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">KM</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Kurt Gregory Marion</div><div class="bot-meta">Class of '87 &middot; General Contractor &middot; President, Marion Construction</div><div class="bot-contact"><a href="mailto:greg@marionconstruction.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+15617228472"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(561) 722-8472</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">JS</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">James Jason Spears</div><div class="bot-meta">Class of '04 &middot; Mechanical Contractor &middot; VP/Owner, Peninsular Mechanical</div><div class="bot-contact"><a href="mailto:jjs@acservice.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+14043753878"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(404) 375-3878</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">JJ</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">John Phillip Jassmann</div><div class="bot-meta">Class of '86 &middot; Insurance Broker &middot; CEO, SandStone Insurance Partners</div><div class="bot-contact"><a href="mailto:john.jassmann@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+16786625704"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(678) 662-5704</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">AJ</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Alexander Bullock Jenkins</div><div class="bot-meta">Class of '11 &middot; Investment Advisor &middot; Partner/CRO, NestEggs 401k</div><div class="bot-contact"><a href="mailto:alexanderj87@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+19043183566"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(904) 318-3566</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">TP</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Thomas Philpot</div><div class="bot-meta">Class of '06 &middot; Attorney &middot; Shareholder, GrayRobinson</div><div class="bot-contact"><a href="mailto:thomas.philpot@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+13523176464"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(352) 317-6464</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">MM</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Michael E. McVeigh</div><div class="bot-meta">Class of '78 &middot; Auto Broker &middot; My Florida Car Guy</div><div class="bot-contact"><a href="mailto:myflcarguy@aol.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+19045350522"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(904) 535-0522</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">SB</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Stephen A. Barnes</div><div class="bot-meta">Class of '90 &middot; Attorney &middot; Owner, Barnes Trial Group</div><div class="bot-contact"><a href="mailto:sb@barnestrialgroup.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+18132455905"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(813) 245-5905</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">SM</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Smith Meyers</div><div class="bot-meta">Class of '18 &middot; Investor &middot; Partner, Blake Investment Partners</div><div class="bot-contact"><a href="mailto:smith.meyers56@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+18139432235"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(813) 943-2235</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">CT</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Clay Townsend</div><div class="bot-meta">Class of '76/'82 &middot; Attorney &middot; Partner, Morgan and Morgan</div><div class="bot-contact"><a href="mailto:ctownsend@forthepeople.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+14077199866"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(407) 719-9866</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">RB</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Robert Buckner</div><div class="bot-meta">Real Estate Broker &amp; Investor</div><div class="bot-contact"><a href="mailto:Robert@Bucknerrealestate.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+13522386930"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(352) 238-6930</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">LM</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Logan Murphy</div><div class="bot-meta">Circuit Court Judge &middot; 13th Judicial Circuit</div><div class="bot-contact"><a href="mailto:jloganmurphy@yahoo.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+19413217945"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(941) 321-7945</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">AJ</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Alden Jones</div><div class="bot-meta">Kellogg &amp; Kimsey</div><div class="bot-contact"><a href="mailto:ajones@kelloggkimsey.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+19413748295"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(941) 374-8295</a></div></div></div>
+
+        <div class="bot-card"><div class="bot-photo">NR</div><div class="bot-info"><div class="bot-role">Member at Large</div><div class="bot-name">Nathan Ritterband</div><div class="bot-meta">&nbsp;</div><div class="bot-contact"><a href="mailto:Nritterb@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a><a href="tel:+18503571745"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>(850) 357-1745</a></div></div></div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Leadership Modal -->
+  <div class="resource-modal leadership-modal" id="modal-leadership">
+    <div class="resource-modal-inner">
+      <button class="resource-modal-close" aria-label="Close">&times;</button>
+      <div class="resource-modal-header">
+        <span class="resource-modal-label">Executive Board</span>
+        <h3>Contact Leadership</h3>
+        <p>The 2026 executive board of the Alpha Omega Chapter. Reach out directly for chapter business, recruitment inquiries, or anything else.</p>
+      </div>
+
+      <div class="leadership-grid">
+
+        <!-- Jude Powell — President (Featured) -->
+        <div class="leader-card featured">
+          <div class="leader-photo">
+            <!-- <img src="assets/Leadership/jude.jpg" alt="Jude Powell"> -->
+            JP
+          </div>
+          <div class="leader-info">
+            <div class="leader-role">Worthy Master &middot; President</div>
+            <div class="leader-name">Jude Powell</div>
+            <div class="leader-contact">
+              <a href="mailto:Jude@clanpowell.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Jude@clanpowell.com</a>
+              <a href="tel:+13212951857"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(321) 295-1857</a>
+              <a href="https://instagram.com/jude_powell" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@jude_powell</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thor Warnken — VP -->
+        <div class="leader-card">
+          <div class="leader-photo">TW</div>
+          <div class="leader-info">
+            <div class="leader-role">Worthy Marshall &middot; Vice President</div>
+            <div class="leader-name">Thor Warnken</div>
+            <div class="leader-contact">
+              <a href="mailto:Thorwarnken@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Thorwarnken@gmail.com</a>
+              <a href="tel:+12392765866"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(239) 276-5866</a>
+              <a href="https://instagram.com/thor.warnken" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@thor.warnken</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hayden McEwan — Treasurer -->
+        <div class="leader-card">
+          <div class="leader-photo">HM</div>
+          <div class="leader-info">
+            <div class="leader-role">Worthy Keeper of Exchequer &middot; Treasurer</div>
+            <div class="leader-name">Hayden McEwan</div>
+            <div class="leader-contact">
+              <a href="mailto:haydenmcewans123@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>haydenmcewans123@gmail.com</a>
+              <a href="tel:+17275934174"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(727) 593-4174</a>
+              <a href="https://instagram.com/_haydenmcewan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@_haydenmcewan</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ryan Krieg — Chaplain -->
+        <div class="leader-card">
+          <div class="leader-photo">RK</div>
+          <div class="leader-info">
+            <div class="leader-role">Worthy Chaplain</div>
+            <div class="leader-name">Ryan Krieg</div>
+            <div class="leader-contact">
+              <a href="mailto:ryankrieg18r@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>ryankrieg18r@gmail.com</a>
+              <a href="tel:+15164695621"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(516) 469-5621</a>
+              <a href="https://instagram.com/Ryan_krieg18" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@Ryan_krieg18</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Paul Pilgrim — New Member Educator -->
+        <div class="leader-card">
+          <div class="leader-photo">PP</div>
+          <div class="leader-info">
+            <div class="leader-role">Worthy Sentinel &middot; New Member Educator</div>
+            <div class="leader-name">Paul Pilgrim</div>
+            <div class="leader-contact">
+              <a href="mailto:paulmpilgrim@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>paulmpilgrim@gmail.com</a>
+              <a href="tel:+14076709119"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(407) 670-9119</a>
+              <a href="https://instagram.com/Paul_pilgrim1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@Paul_pilgrim1</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jackson Sommer — Risk Manager -->
+        <div class="leader-card">
+          <div class="leader-photo">JS</div>
+          <div class="leader-info">
+            <div class="leader-role">Risk Management Officer</div>
+            <div class="leader-name">Jackson Sommer</div>
+            <div class="leader-contact">
+              <a href="mailto:jacksonsommer26@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>jacksonsommer26@gmail.com</a>
+              <a href="tel:+14079619408"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(407) 961-9408</a>
+              <a href="https://instagram.com/Jsommer15" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@Jsommer15</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- JT Warren — Secretary -->
+        <div class="leader-card">
+          <div class="leader-photo">JW</div>
+          <div class="leader-info">
+            <div class="leader-role">Worthy Scribe &middot; Secretary</div>
+            <div class="leader-name">JT Warren</div>
+            <div class="leader-contact">
+              <a href="mailto:jtwarren2004@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>jtwarren2004@gmail.com</a>
+              <a href="tel:+15712998281"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(571) 299-8281</a>
+              <a href="https://instagram.com/jt.warrren" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@jt.warrren</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cooper Dotson — Philanthropy Chair -->
+        <div class="leader-card">
+          <div class="leader-photo">CD</div>
+          <div class="leader-info">
+            <div class="leader-role">Worthy Usher &middot; Philanthropy Chair</div>
+            <div class="leader-name">Cooper Dotson</div>
+            <div class="leader-contact">
+              <a href="mailto:cooper@thedotsons.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>cooper@thedotsons.com</a>
+              <a href="tel:+19414008167"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(941) 400-8167</a>
+              <a href="https://instagram.com/cooper_dot_" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@cooper_dot_</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pete Snider — Historian -->
+        <div class="leader-card">
+          <div class="leader-photo">PS</div>
+          <div class="leader-info">
+            <div class="leader-role">Worthy Keeper of Annals &middot; Historian</div>
+            <div class="leader-name">Pete Snider</div>
+            <div class="leader-contact">
+              <a href="mailto:pete.snider01@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>pete.snider01@gmail.com</a>
+              <a href="tel:+18508169423"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(850) 816-9423</a>
+              <a href="https://instagram.com/pete_snider" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@pete_snider</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Daniel Gustafson — Rush Chair -->
+        <div class="leader-card">
+          <div class="leader-photo">DG</div>
+          <div class="leader-info">
+            <div class="leader-role">Recruitment Chairman &middot; Rush Chair</div>
+            <div class="leader-name">Daniel Gustafson</div>
+            <div class="leader-contact">
+              <a href="mailto:danielgus4567@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>danielgus4567@gmail.com</a>
+              <a href="tel:+15612253061"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(561) 225-3061</a>
+              <a href="https://instagram.com/Danielgustafsonn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@Danielgustafsonn</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jack Griffith — House Manager -->
+        <div class="leader-card">
+          <div class="leader-photo">JG</div>
+          <div class="leader-info">
+            <div class="leader-role">House Manager</div>
+            <div class="leader-name">Jack Griffith</div>
+            <div class="leader-contact">
+              <a href="mailto:griffithjack@ufl.edu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>griffithjack@ufl.edu</a>
+              <a href="tel:+12393703799"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(239) 370-3799</a>
+              <a href="https://instagram.com/jack.t.griffith" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@jack.t.griffith</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bylaws Modal -->
+  <div class="resource-modal bylaws-modal" id="modal-bylaws">
+    <div class="resource-modal-inner">
+      <button class="resource-modal-close" aria-label="Close">&times;</button>
+      <div class="resource-modal-header">
+        <span class="resource-modal-label">Chapter Bylaws</span>
+        <h3>Alpha Omega Chapter Bylaws</h3>
+        <p>The governing rules, officer duties, and member obligations of the Alpha Omega Chapter of Alpha Tau Omega Fraternity at the University of Florida.</p>
+      </div>
+
+      <div class="bylaws-layout">
+        <aside class="bylaws-toc">
+          <span class="bylaws-toc-label">Table of Contents</span>
+          <ul>
+            <li><a href="#bylaw-preamble" class="active">Preamble</a></li>
+            <li><a href="#bylaw-article-1">Article I - Authority</a></li>
+            <li><a href="#bylaw-article-2">Article II - Membership</a></li>
+            <li><a href="#bylaw-article-3">Article III - Duties of Members</a></li>
+            <li><a href="#bylaw-article-4">Article IV - Elections</a></li>
+            <li><a href="#bylaw-article-5">Article V - Duties of Officers</a></li>
+            <li><a href="#bylaw-article-6">Article VI - Meetings</a></li>
+            <li><a href="#bylaw-article-7">Article VII - Standing Committees</a></li>
+          </ul>
+        </aside>
+
+        <div class="bylaws-content">
+          <div class="bylaws-revised">Revised Spring 2026</div>
+
+          <div class="bylaws-preamble" id="bylaw-preamble">
+            <p><strong>Whereas,</strong> the Alpha Omega Chapter of Alpha Tau Omega Fraternity exists by virtue of a charter duly granted by the National Fraternity of Alpha Tau Omega; and</p>
+            <p style="margin-top: 0.75rem;"><strong>Whereas,</strong> Alpha Omega Chapter is committed to fostering a spirit of loyalty to the University of Florida, while promoting the social, academic, professional, and personal development of its members as men of integrity and character; and</p>
+            <p style="margin-top: 0.75rem;"><strong>Whereas,</strong> these objectives are most effectively achieved in an environment grounded in brotherly love and respect, mutual accountability, and a shared commitment to the principles and values of Alpha Tau Omega, free from hazing and any form of misconduct; and</p>
+            <p style="margin-top: 0.75rem;"><strong>Whereas,</strong> the Chapter seeks to cultivate leaders who contribute positively to their communities, uphold the dignity of the Fraternity, and embody the ideals set forth in The Manual and The Story of The Alpha Tau Omega Fraternity;</p>
+            <p style="margin-top: 0.75rem;"><strong>Now, therefore,</strong> for the better attainment of these purposes, the following bylaws and house rules are hereby ordained, established, and upheld by the Alpha Omega Chapter of the Alpha Tau Omega Fraternity.</p>
+          </div>
+
+          <section class="bylaws-article" id="bylaw-article-1">
+            <div class="bylaws-article-header">
+              <span class="bylaws-article-number">Article I</span>
+              <h3>Authority</h3>
+            </div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§1</span>Precedence of National Authority</h4><p>These bylaws are established under the authority of the National Fraternity of Alpha Tau Omega and, in case of any conflict, the constitution and laws of the National Fraternity shall take precedence. Nothing in conflict with the constitution or laws, or with the standards of the University of Florida, shall be allowed to exist in the Alpha Omega Chapter.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§2</span>Definitions</h4><p>Reference herein made to the "constitution" means that constitution and laws of the Alpha Tau Omega Fraternity dated January 1, 1980, or as later amended or changed.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§3</span>"Fraternity" &amp; "Chapter"</h4><p>"Fraternity" means the National Fraternity of Alpha Tau Omega. "Chapter" means the Alpha Omega Chapter of Alpha Tau Omega Fraternity.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§4</span>Adoption &amp; Supersession</h4><p>These bylaws, after adoption by a majority vote of the active members, shall supersede and replace all bylaws, rules, and regulations previously adopted by the chapter which may be in conflict.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§5</span>Amendment</h4><p>These bylaws may be amended by a favorable vote of two-thirds of the active members (who have been active for longer than one scholastic semester) present and voting at any regular or special meeting.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§6</span>Notice of Proposed Amendments</h4><p>Proposed amendments must be presented in written form at least one week prior to the vote. The notification shall include a first reading followed by discussion, and a final reading, discussion, and vote on the second week. No amendment shall be effective unless in compliance with the constitution, laws, and minimum requirements outlined in the Policies and Procedures of Alpha Tau Omega Fraternity, Inc.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§7</span>Interpretation</h4><p>All extraneous circumstances or undefined articles shall be referred to the Executive Committee for a final decision.</p></div>
+          </section>
+
+          <section class="bylaws-article" id="bylaw-article-2">
+            <div class="bylaws-article-header">
+              <span class="bylaws-article-number">Article II</span>
+              <h3>Membership</h3>
+            </div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§1</span>Election to Membership</h4><p>Election to membership shall be in accordance with Article VII of the constitution and laws of the Alpha Tau Omega Fraternity.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§2</span>Election to Pledgeship</h4><p>Election to pledgeship shall be by vast majority ballot pursuant to Article VII, Section 5, of the Alpha Tau Omega Constitution.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§3</span>Composition</h4><p>Membership shall consist of all those who have been properly initiated and all affiliates who are properly enrolled at the University of Florida.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§4</span>Affiliation from Other Chapters</h4><p>Members initiated at other chapters may be affiliated in accordance with the ATO constitution, provided they acquire approval by two-thirds of the active chapter members present. The member must actively participate in Alpha Omega's Chapter functions for one semester preceding the vote, and submit a letter of good standing from the Worthy Master of his previous chapter.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§5</span>Classifications</h4><p>All members shall be carried on the official rolls in the order of initiation. Each member shall be in one of three classifications:</p><ul><li><strong>Alumnus</strong> - any graduated member not currently enrolled in undergraduate colleges at UF.</li><li><strong>Active Member</strong> - any member currently enrolled at UF paying the full bill required.</li><li><strong>Inactive Member</strong> - a UF-enrolled member not paying the full bill. Inactive members must still pay national dues at minimum.</li></ul></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§6</span>Pledges</h4><p>Men classified as pledges of the Alpha Tau Omega Fraternity shall be subject to all rules, regulations, and laws contained herein or adopted by the Chapter as part of the pledge program.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§7</span>Good Standing</h4><p>All members shall remain in good standing by adhering to all policies set forth by ATO National, the University of Florida, and any additional requirements from Chapter Revitalization or Membership Review. This includes:</p><ul><li>Mandatory participation in all required educational and development programs, including the ATΩ Pursuit Program.</li><li>Compliance with all Health &amp; Safety policies and accountability measures.</li><li>Adherence to all sanctions, requirements, and operational expectations placed upon the Chapter.</li></ul><p>Failure to comply may result in disciplinary action up to and including suspension or termination of membership.</p></div>
+          </section>
+
+          <section class="bylaws-article" id="bylaw-article-3">
+            <div class="bylaws-article-header">
+              <span class="bylaws-article-number">Article III</span>
+              <h3>Duties, Obligations, and Privileges of Members</h3>
+            </div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§1</span>General</h4><p>All members shall be subject to all rules, regulations, and laws contained in the constitution, bylaws, and house rules.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§2</span>Active Membership Obligation</h4><p>All initiated members shall remain fully active and pay fully active dues during their entire enrollment period at UF or for four (4) years, whichever is shorter. Discounts, rebates, or release from this obligation require approval by two-thirds of the Executive Committee or the national fraternity.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§3</span>Payment of Dues</h4><p>Each semester's bill shall be paid at the start of the semester as determined by the Worthy Keeper of Exchequer.</p><ul><li>Extensions require approval by two-thirds of the Executive Committee.</li><li>Late payment incurs a fine of 10% of the total bill due, plus immediate suspension of dining, social, voting, parking, and bump privileges.</li><li>30 days in arrears: suspension from the Chapter; all rights and privileges forfeited until paid.</li><li>60 days in arrears: recommendation to the Province Chief for suspension.</li></ul></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§4</span>Attendance</h4><p>Active members and pledges shall attend all official functions. The Scribe takes roll at official functions. Fines for absences:</p><ul><li>Rush meeting or formal pledging: placed on driving list.</li><li>Initiation: $50.00 (if deemed necessary by Executive Committee).</li><li>Regularly scheduled chapter meeting: $10.00.</li><li>Two unexcused absences in a month: immediate suspension from the next social function.</li></ul></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§5</span>Privileges</h4><ul><li><strong>Alumni</strong> - all rights and privileges as prescribed by the Constitution.</li><li><strong>Active members</strong> - full rights and privileges per the Constitution and bylaws.</li><li><strong>Inactive members</strong> - no vote, no participation in fraternity functions, no benefits.</li><li>The Worthy Master assumes the highest position on the bump list at the end of the Spring semester following his Fall election.</li></ul></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§6</span>Right of Appeal</h4><p>Any member subject to disciplinary action by the Judicial Committee may appeal to the Chapter in regular or special meeting. A majority of members present is necessary to override the decision. An appeal shall not be heard again unless by two-thirds affirmative vote. Punishments coming directly from the bylaws cannot be overridden.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§7</span>Major Disciplinary Proceedings</h4><p>All disciplinary action involving fines in excess of $100.00 or suspension for longer than two semesters follows trial proceedings as prescribed by the Constitution.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§9</span>Member Expectations</h4><p>All members shall maintain a commitment to academic achievement and campus involvement.</p><ul><li>The Chapter shall strive for a cumulative GPA at or above 3.0.</li><li>Each member is expected to participate in at least one additional campus organization.</li><li>Each member is expected to complete a minimum of 10 service hours per semester.</li></ul></div>
+          </section>
+
+          <section class="bylaws-article" id="bylaw-article-4">
+            <div class="bylaws-article-header">
+              <span class="bylaws-article-number">Article IV</span>
+              <h3>Election and Removal of Officers</h3>
+            </div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§1</span>Officer Ranks</h4>
+              <div class="bylaws-officer-list">
+                <span><span class="num">1.</span>Worthy Master (President)</span>
+                <span><span class="num">11.</span>Social Chair</span>
+                <span><span class="num">2.</span>Worthy Marshall (VP)</span>
+                <span><span class="num">12.</span>House Manager</span>
+                <span><span class="num">3.</span>Worthy Chaplain</span>
+                <span><span class="num">13.</span>Recruitment Chairman</span>
+                <span><span class="num">4.</span>Worthy Keeper of Exchequer</span>
+                <span><span class="num">14.</span>Kitchen Manager</span>
+                <span><span class="num">5.</span>Worthy Sentinel (NME)</span>
+                <span><span class="num">15.</span>Public Relations</span>
+                <span><span class="num">6.</span>Worthy Keeper of Annals</span>
+                <span><span class="num">16.</span>Community Service</span>
+                <span><span class="num">7.</span>Worthy Scribe</span>
+                <span><span class="num">17.</span>Scholarship Chairman</span>
+                <span><span class="num">8.</span>Risk Management Officer</span>
+                <span><span class="num">18.</span>Intramural Chairman</span>
+                <span><span class="num">9.</span>Worthy Usher (Philanthropy)</span>
+                <span><span class="num">19.</span>Alumni Relations</span>
+                <span><span class="num">10.</span>Executive Members at Large</span>
+                <span><span class="num">20.</span>Campus Involvement</span>
+              </div>
+            </div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§2</span>Election Timing</h4><p>Election of the Worthy Master, Worthy Chaplain, Worthy Keeper of the Exchequer, Risk Management Officer, Worthy Keeper of Annals, and Worthy Scribe shall be held as near as possible to the first week of November. Nominations in the second-to-last week of October, speeches the last week of October, elections the first week of November.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§3</span>Installation &amp; Transition</h4><p>Newly elected officers take over upon official installation in the last chapter of the fall semester. Outgoing officers shall have all records up-to-date and turn them over with all property. Newly initiated brothers shall not participate in executive elections in the same semester they are initiated. Each outgoing officer is required to take detailed transition notes on computer and file them with the Worthy Keeper of Annals.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§5</span>Eligibility</h4><p>Only active members with a minimum cumulative GPA of 3.0 and no financial indebtedness to the Chapter shall be eligible for office. All officers must demonstrate strong academic standing and leadership capability.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§7</span>Automatic Disqualification</h4><p>Any officer or committee chairman whose financial indebtedness remains delinquent for more than 30 days shall immediately become disqualified and the Executive Committee shall call another election immediately. Exception by two-thirds vote of the Chapter (not including the officer in question).</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§8</span>Vacancies</h4><p>Whenever a vacancy occurs in any elected office, an election shall be called within seven days or at the next Chapter meeting. The elected officer shall fill the un-expired term.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§9</span>Removal from Office</h4><p>Any officer may be removed upon petition of five active members or Executive Committee recommendation, in conjunction with a two-thirds majority vote of the Chapter.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§12</span>Board of Directors</h4><p>The business of the Corporation shall be managed by a Board of Directors (Trustees) consisting of the Worthy Master, Worthy Chaplain, Risk Management Officer, Worthy Keeper of the Exchequer, Worthy Keeper of the Annals, and Worthy Scribe. Directors hold office for one year or until successors are elected.</p></div>
+          </section>
+
+          <section class="bylaws-article" id="bylaw-article-5">
+            <div class="bylaws-article-header">
+              <span class="bylaws-article-number">Article V</span>
+              <h3>Duties of Officers</h3>
+            </div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§1</span>Worthy Master</h4><p>Liaison between the Chapter and the University, National Fraternity, and Alumni. Responsible for all actions of the Chapter. Official representative to all national Congresses. Chairman of the Executive Committee. Voting member of the Alpha Omega Board of Trustees and Housing Corporation.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§2</span>Worthy Marshall</h4><p>Oversees all committee chairs. Assumes responsibilities of the President if he is removed or absent. Shares campus involvement opportunities with the chapter and provides new members with opportunities inside or outside the fraternity.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§3</span>Worthy Chaplain</h4><p>Ritual expert. Sets up the Chapter Room for ceremonies. Keeps order in the annals room. Coordinates brotherhood events. Serves as spiritual advisor.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§4</span>Worthy Keeper of Exchequer</h4><p>Exclusive responsibility for Chapter funds. Adjusts member financial statements at his discretion (subject to Executive Committee review). Advises Chapter on all expenditures. Selects an Assistant WKE subject to Chapter approval. Oversees the House Manager, Social Chairman, Roadtrip Chairman, Formal Chairman, and Homecoming Chairman.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§5</span>Worthy Keeper of Annals</h4><p>Keeps accurate National and IFC rolls. Preserves chapter history. Maintains alumni address records. Plans and executes alumni weekend in the fall. Prepares alumni/parent newsletter mailed five weeks before each semester ends. Organizes an annual career fair for brothers and alumni.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§6</span>Worthy Scribe</h4><p>Takes attendance at all official functions. Records Executive Committee, Chapter, and Judicial Board meetings. Keeps accurate minutes. Compiles and submits the chapter's annual report to national headquarters. Oversees the Public Relations Chairman, Community Service Coordinator, and Campus Involvement Chairman. Maintains the Chapter List Serve.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§7</span>Risk Management Officer</h4><p>Chairman of the Judicial Committee (non-voting). Calls brothers suspected of by-law violations for hearings. Gives semester reports on risk management policies. Aids in planning all Chapter functions to ensure compliance.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§8</span>Worthy Usher</h4><p>Serves as Philanthropy Chairman. Plans at least two major philanthropic events per year with a minimum goal of $2,000 raised annually for an approved non-profit. Oversees participation in sorority philanthropies.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§9</span>Worthy Sentinel (New Member Educator)</h4><p>Oversees the new member experience in strict accordance with the ATΩ New Member Education Framework, the ATΩ Manual, and University of Florida policies. Upholds a strict zero-tolerance policy for hazing. Implements a structured, values-based program focused on leadership development, brotherhood integration, academic success, and personal and professional growth. Coordinates weekly new member meetings on campus in a transparent, approved setting. Oversees mentorship pairing new members with active brothers and alumni. Ensures a clear syllabus, a defined timeline (not to exceed six academic weeks), and full transparency. Coordinates formal parent communication.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§10</span>Social Chairman</h4><p>Plans and executes all social functions. Assists the Recruitment Chairman with rush parties. Takes a chapter vote five weeks prior to each semester's end for upcoming socials. Responsible for the upkeep and security of Chapter stereo equipment. Must comply with all university regulations.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§11</span>House Manager</h4><p>Advises the Chapter on care of the chapter house and grounds. Directly in charge of the Chapter maintenance employee. Ensures compliance with all Fire Safety requirements. May levy fines up to $50.00. Holds at least one bump per semester. Appoints a parking lot manager, energy conservation officer, and yard manager.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§12</span>Recruitment Chairman</h4><p>Serves as Rush Chairman. Organizes the rushing program and meets eligible university and high school students. Answers all alumni rush recommendations. Required to be in Gainesville for summer. Must complete Phired Up Certification.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§14</span>Kitchen Manager</h4><p>Enforces regulations pertaining to the dining room and kitchen. May levy fines up to $10.00 for kitchen and dining room violations. Head server at the evening meal. Responsible for dining room help employment. Holds at least three sit-downs per week.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§15</span>Scholarship Chairman</h4><p>Enforces study hours for new members. Obtains academic reports from the IFC office each semester. Informs the chapter of available scholarships. Maintains an up-to-date scholarship file and old resumes.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§16</span>Intramural Chairman</h4><p>Organizes teams, appoints coaches, acquires equipment, and publicizes intramural events. Maintains communication with the intramural office. Keeps the chapter informed of President's Cup standings.</p></div>
+          </section>
+
+          <section class="bylaws-article" id="bylaw-article-6">
+            <div class="bylaws-article-header">
+              <span class="bylaws-article-number">Article VI</span>
+              <h3>Meetings</h3>
+            </div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§1</span>Regular Meetings</h4><p>Regular meetings of the Chapter are held weekly during the college year. Chapter is held every <strong>Monday at 6:15 PM</strong> unless moved by the Worthy Master or in conflict with another required event.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§2</span>Changing Meeting Time</h4><p>The time and date of regular meetings may be changed only by a two-thirds vote of members present and voting.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§4</span>Special Meetings</h4><p>Special meetings may be called by the Worthy Master at his discretion or upon any instance requiring Chapter decisions prior to the next scheduled meeting.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§5</span>Formal Meetings</h4><p>Formal Chapter Meetings shall be opened and closed in the manner prescribed in the Ritual.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§6</span>Parliamentary Procedure</h4><p>Any parliamentary procedure not covered by the Ritual, Constitution, or bylaws shall be governed by Robert's Rules of Order as interpreted by the Worthy Master.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§8</span>Chapter Room Rules</h4><ul><li>Reading material not pertinent to Chapter business is prohibited during meetings.</li><li>Profane or obscene language is prohibited.</li><li>The Worthy Master and Worthy Sentinel shall fine any member whose conduct is not in keeping with the spirit of the Fraternity.</li></ul></div>
+          </section>
+
+          <section class="bylaws-article" id="bylaw-article-7">
+            <div class="bylaws-article-header">
+              <span class="bylaws-article-number">Article VII</span>
+              <h3>Standing Committees</h3>
+            </div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§1</span>Committees</h4><ol><li>Executive Committee</li><li>Rush Committee</li><li>Membership Education Committee</li><li>Judicial Committee</li><li>Philanthropy Committee</li><li>Bylaw Revisions Committee</li></ol></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§2</span>Executive Committee</h4><p>Consists of the eight elected officers and two at-large members, with Worthy Usher and Worthy Sentinel as non-voting members until the spring pledge class has been initiated. The Worthy Master is chairman. Duties include reviewing and approving chapter policy decisions, serving as the Chapter's highest judicial board for appeals, voting on proposed legislation before it reaches the full chapter, and appointing: Scholarship, House, Public Relations, Community Service, Recruitment, Kitchen, Intramural, Alumni Relations, and Campus Involvement chairmen.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§3</span>Judicial Committee</h4><p>Made up of the Worthy Master, Worthy Marshall, Worthy Keeper of the Exchequer, Worthy Chaplain, Worthy Scribe, and four at-large members chosen by the executive board. Headed by the Risk Manager. Takes disciplinary action on conduct prejudicial to the Chapter including offenses against law, failure to pay indebtedness, disciplinary action by the University, continued failure to participate, property destruction, physical assault, and more. May levy fines up to $100.00 or invoke suspension up to two semesters by majority vote.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§4</span>Membership Education Committee</h4><p>Composed of the New Member Educator and no more than two appointed members. Assists in planning and executing a structured, values-driven new member program aligned with ATΩ National standards and Chapter revitalization requirements.</p></div>
+            <div class="bylaws-section"><h4><span class="bylaws-section-num">§5</span>Rush Committee</h4><p>Consists of the Rush Chairman, Worthy Chaplain, Worthy Scribe, and appointed members. Secures names of prospective rushees from alumni and members. Establishes contact, investigates eligibility (financial, social, scholastic), organizes entertainment, and organizes fall, spring, and summer rush. Instructs brothers on proper rush conduct per Phired Up Certifications.</p></div>
+          </section>
+
+          <p style="text-align:center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--ato-grey); font-family: var(--font-display); font-style: italic; font-size: 0.9rem; color: var(--ato-dark-gold);">"Love &amp; Respect"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <img src="" alt="">
+  </div>
+
+  <!-- ========================================
+       JAVASCRIPT
+       ======================================== -->
+  <script>
+    // Nav scroll behavior
+    const nav = document.getElementById('nav');
+    const backToTop = document.getElementById('backToTop');
+
+    function onScroll() {
+      const scrolled = window.scrollY > 80;
+      nav.classList.toggle('scrolled', scrolled);
+      backToTop.classList.toggle('visible', window.scrollY > 600);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Back to top
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    function updateActiveNav() {
+      const scrollPos = window.scrollY + 120;
+      sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
+        if (scrollPos >= top && scrollPos < top + height) {
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+
+    // Fade-in on scroll (Intersection Observer)
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+
+    document.querySelectorAll('[data-lightbox]').forEach(item => {
+      item.style.cursor = 'zoom-in';
+      item.addEventListener('click', () => {
+        const img = item.querySelector('img');
+        if (img) {
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+          lightbox.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+      lightboxImg.src = '';
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+        lightboxImg.src = '';
+      }
+    });
+
+    // Resource Modals
+    let savedScrollY = 0;
+
+    function openModal(modal) {
+      savedScrollY = window.scrollY;
+      modal.classList.add('open');
+      document.body.classList.add('modal-open');
+      document.body.style.top = '-' + savedScrollY + 'px';
+    }
+
+    function closeModal(modal) {
+      modal.classList.remove('open');
+      document.body.classList.remove('modal-open');
+      document.body.style.top = '';
+      window.scrollTo(0, savedScrollY);
+    }
+
+    document.querySelectorAll('.member-card[data-modal]').forEach(card => {
+      card.addEventListener('click', (e) => {
+        const modalId = 'modal-' + card.dataset.modal;
+        const modal = document.getElementById(modalId);
+        if (modal) {
+          e.preventDefault();
+          openModal(modal);
+        }
+      });
+    });
+
+    document.querySelectorAll('.resource-modal').forEach(modal => {
+      const closeBtn = modal.querySelector('.resource-modal-close');
+      const inner = modal.querySelector('.resource-modal-inner');
+
+      closeBtn.addEventListener('click', () => closeModal(modal));
+      modal.addEventListener('click', (e) => {
+        if (!inner.contains(e.target)) closeModal(modal);
+      });
+
+      // Stop wheel events from bubbling to the page when scrolling inside the modal content
+      inner.addEventListener('wheel', (e) => {
+        e.stopPropagation();
+      }, { passive: true });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.resource-modal.open').forEach(m => closeModal(m));
+      }
+    });
+
+    // Bylaws TOC smooth scroll + active highlight
+    (function() {
+      const bylawsModal = document.getElementById('modal-bylaws');
+      if (!bylawsModal) return;
+      const tocLinks = bylawsModal.querySelectorAll('.bylaws-toc a');
+      const content = bylawsModal.querySelector('.bylaws-content');
+
+      tocLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const target = bylawsModal.querySelector(link.getAttribute('href'));
+          if (target) {
+            content.scrollTo({
+              top: target.offsetTop - 20,
+              behavior: 'smooth'
+            });
+            tocLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+          }
+        });
+      });
+
+      // Update active TOC on scroll
+      content.addEventListener('scroll', () => {
+        const sections = bylawsModal.querySelectorAll('.bylaws-article, #bylaw-preamble');
+        const scrollPos = content.scrollTop + 60;
+        let current = '';
+        sections.forEach(section => {
+          if (section.offsetTop <= scrollPos) current = section.id;
+        });
+        if (current) {
+          tocLinks.forEach(l => {
+            l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+          });
+        }
+      });
+    })();
+
+    // Reunion Carousel
+    (function() {
+      const carousel = document.getElementById('reunionCarousel');
+      if (!carousel) return;
+
+      const slides = carousel.querySelectorAll('.carousel-slide');
+      const dots = carousel.querySelectorAll('.carousel-dot');
+      const prevBtn = carousel.querySelector('.prev');
+      const nextBtn = carousel.querySelector('.next');
+      const currentEl = document.getElementById('carouselCurrent');
+      const totalEl = document.getElementById('carouselTotal');
+      let current = 0;
+      let autoTimer;
+
+      totalEl.textContent = String(slides.length).padStart(2, '0');
+
+      function goTo(index) {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((s, i) => s.classList.toggle('active', i === current));
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        currentEl.textContent = String(current + 1).padStart(2, '0');
+        resetAuto();
+      }
+
+      function resetAuto() {
+        clearInterval(autoTimer);
+        autoTimer = setInterval(() => goTo(current + 1), 6000);
+      }
+
+      prevBtn.addEventListener('click', () => goTo(current - 1));
+      nextBtn.addEventListener('click', () => goTo(current + 1));
+      dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+      // Pause on hover
+      carousel.addEventListener('mouseenter', () => clearInterval(autoTimer));
+      carousel.addEventListener('mouseleave', resetAuto);
+
+      resetAuto();
+    })();
+
+    // Alumni tabs
+    const alumniTabs = document.querySelectorAll('.alumni-tab');
+    const alumniPanels = document.querySelectorAll('.alumni-panel');
+
+    alumniTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+        alumniTabs.forEach(t => {
+          t.classList.toggle('active', t === tab);
+          t.setAttribute('aria-selected', t === tab);
+        });
+        alumniPanels.forEach(panel => {
+          panel.classList.toggle('active', panel.id === 'panel-' + target);
+        });
+      });
+    });
+
+    // Legend card click to expand bio on mobile/touch
+    document.querySelectorAll('.legend-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (window.matchMedia('(hover: none)').matches) {
+          card.classList.toggle('expanded');
+        }
+      });
+    });
+
+    // Smooth scroll offset for fixed nav
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offset = 70;
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
