@@ -1315,6 +1315,184 @@
       cursor: pointer;
     }
 
+    /* ========================================
+       CAMPUS LEGACY TAB
+       ======================================== */
+    .legacy-intro {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 3rem;
+    }
+
+    .legacy-intro p {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    .legacy-featured {
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      aspect-ratio: 21/9;
+      margin-bottom: 1.5rem;
+      cursor: pointer;
+    }
+
+    .legacy-featured img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+
+    .legacy-featured:hover img {
+      transform: scale(1.03);
+    }
+
+    .legacy-featured-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 3rem;
+      color: white;
+    }
+
+    .legacy-featured-overlay .legacy-tag {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ato-gold);
+      border-left: 2px solid var(--ato-gold);
+      padding-left: 0.75rem;
+      margin-bottom: 0.75rem;
+      align-self: flex-start;
+    }
+
+    .legacy-featured-overlay h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .legacy-featured-overlay p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    .legacy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .legacy-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 3px;
+      cursor: pointer;
+      background: var(--ato-night);
+      aspect-ratio: 4/3;
+    }
+
+    .legacy-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease, opacity 0.4s ease;
+      opacity: 0.85;
+    }
+
+    .legacy-card:hover img {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+
+    .legacy-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.25rem;
+      color: white;
+    }
+
+    .legacy-card-overlay .legacy-tag {
+      font-family: var(--font-body);
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ato-gold);
+      margin-bottom: 0.3rem;
+    }
+
+    .legacy-card-overlay h4 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1.15;
+      margin-bottom: 0.3rem;
+    }
+
+    .legacy-card-overlay p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .legacy-card:hover .legacy-card-overlay p {
+      -webkit-line-clamp: unset;
+    }
+
+    .legacy-card-detail {
+      display: none;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.35rem;
+      line-height: 1.5;
+    }
+
+    .legacy-card:hover .legacy-card-detail {
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .legacy-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .legacy-featured {
+        aspect-ratio: 16/9;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .legacy-grid {
+        grid-template-columns: 1fr;
+      }
+      .legacy-featured-overlay {
+        padding: 1.5rem;
+      }
+    }
+
     /* Alumni Network / BOT Modal */
     .resource-modal.bot-modal .resource-modal-inner {
       max-width: 920px;
@@ -2659,6 +2837,7 @@
       <div class="alumni-tabs fade-in" role="tablist">
         <button class="alumni-tab active" data-tab="legends" role="tab" aria-selected="true">Alumni Legends</button>
         <button class="alumni-tab" data-tab="prominent" role="tab" aria-selected="false">Prominent Alumni</button>
+        <button class="alumni-tab" data-tab="campus" role="tab" aria-selected="false">Campus Legacy</button>
       </div>
 
       <!-- Legends Panel -->
@@ -2805,6 +2984,115 @@
             </div>
           </div>
 
+        </div>
+      </div>
+
+      <!-- Campus Legacy Panel -->
+      <div class="alumni-panel" id="panel-campus" role="tabpanel">
+        <div class="legacy-intro fade-in">
+          <p>The Alpha Omega chapter has shaped the University of Florida in ways that go beyond the classroom. Buildings, stadiums, libraries, and training centers across campus bear the names of ATO brothers who gave back to the university they love.</p>
+        </div>
+
+        <!-- Featured: Ben Hill Griffin / Spurrier Field -->
+        <div class="legacy-featured fade-in" data-lightbox>
+          <img src="assets/Buildings/ben-hill-griffin.jpg" alt="Ben Hill Griffin Stadium - The Swamp" loading="lazy" decoding="async">
+          <div class="legacy-featured-overlay">
+            <span class="legacy-tag">Home of the Florida Gators &middot; 88,548 Seats</span>
+            <h3>Ben Hill Griffin Stadium &amp; Steve Spurrier-Florida Field</h3>
+            <p>The Swamp is named for Ben Hill Griffin Jr., a prominent citrus magnate, former state legislator, and ATO alumnus who was one of UF's most significant donors. The playing surface itself is named after Steve Spurrier, ATO's most famous alumnus - the only Heisman winner and national championship head coach in Florida history.</p>
+          </div>
+        </div>
+
+        <div class="legacy-grid fade-in">
+          <!-- O'Connell Center -->
+          <div class="legacy-card" data-lightbox>
+            <img src="assets/Buildings/oconnell-center.jpg" alt="Stephen C. O'Connell Center" loading="lazy" decoding="async">
+            <div class="legacy-card-overlay">
+              <span class="legacy-tag">The O'Dome</span>
+              <h4>Stephen C. O'Connell Center</h4>
+              <p>Named for former UF President and Florida Supreme Court Chief Justice Stephen C. O'Connell, an Alpha Omega brother. The O'Dome hosts basketball, gymnastics, concerts, and major campus events.</p>
+            </div>
+          </div>
+
+          <!-- Smathers Libraries -->
+          <div class="legacy-card" data-lightbox>
+            <img src="assets/Buildings/smathers-library.jpg" alt="George A. Smathers Libraries" loading="lazy" decoding="async">
+            <div class="legacy-card-overlay">
+              <span class="legacy-tag">UF Library System</span>
+              <h4>George Smathers Libraries</h4>
+              <p>The university's library system is named for George Smathers, a long-serving U.S. Senator from Florida and ATO alumnus who represented the state for 18 years in Washington.</p>
+            </div>
+          </div>
+
+          <!-- Chiles Legal Center -->
+          <div class="legacy-card" data-lightbox>
+            <img src="assets/Buildings/chiles-legal-center.jpg" alt="Lawton Chiles Legal Information Center" loading="lazy" decoding="async">
+            <div class="legacy-card-overlay">
+              <span class="legacy-tag">Levin College of Law</span>
+              <h4>Lawton Chiles Legal Information Center</h4>
+              <p>Located within the Levin College of Law, named for Lawton Chiles, U.S. Senator and 41st Governor of Florida. A member of the Alpha Omega chapter.</p>
+            </div>
+          </div>
+
+          <!-- Criser Hall -->
+          <div class="legacy-card" data-lightbox>
+            <img src="assets/Buildings/criser-hall.jpg" alt="Criser Hall" loading="lazy" decoding="async">
+            <div class="legacy-card-overlay">
+              <span class="legacy-tag">Student Services</span>
+              <h4>Criser Hall</h4>
+              <p>Named for Marshall Criser, UF's 10th president and ATO member. Houses the Office of Admissions and Student Financial Aid - the first building most Gators walk into.</p>
+            </div>
+          </div>
+
+          <!-- Pressly Stadium -->
+          <div class="legacy-card" data-lightbox>
+            <img src="assets/Buildings/pressly-stadium.jpg" alt="James G. Pressly Stadium" loading="lazy" decoding="async">
+            <div class="legacy-card-overlay">
+              <span class="legacy-tag">Soccer &amp; Track</span>
+              <h4>James G. Pressly Stadium</h4>
+              <p>Home of the Florida Gators women's soccer and track &amp; field teams. Named in 2004 after James Pressly, a UF Law graduate and ATO alumnus, following a major gift to the athletic program.</p>
+            </div>
+          </div>
+
+          <!-- Katie Seashole Pressly -->
+          <div class="legacy-card" data-lightbox>
+            <img src="assets/Buildings/pressly-softball.jpg" alt="Katie Seashole Pressly Softball Stadium" loading="lazy" decoding="async">
+            <div class="legacy-card-overlay">
+              <span class="legacy-tag">Gator Softball</span>
+              <h4>Katie Seashole Pressly Softball Stadium</h4>
+              <p>Named after the wife of ATO alumnus Jamie Pressly. A major gift in 2007 led to renovations that made it one of the premier softball venues in the country.</p>
+            </div>
+          </div>
+
+          <!-- Heavener -->
+          <div class="legacy-card">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg, var(--ato-dark-blue), var(--ato-azure));display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:2rem;color:rgba(255,255,255,0.1);">ΑΤΩ</div>
+            <div class="legacy-card-overlay">
+              <span class="legacy-tag">$85M Facility &middot; Opened 2022</span>
+              <h4>Heavener Football Training Center</h4>
+              <p>The 140,000 sq ft, $85 million facility named for Bill Heavener, ATO alumnus and former UF Board of Trustees chairman. The day-to-day home of Florida football.</p>
+            </div>
+          </div>
+
+          <!-- McKethan -->
+          <div class="legacy-card">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg, var(--ato-dark-blue), var(--ato-azure));display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:2rem;color:rgba(255,255,255,0.1);">ΑΤΩ</div>
+            <div class="legacy-card-overlay">
+              <span class="legacy-tag">Historical &middot; 1988 - 2020</span>
+              <h4>Alfred A. McKethan Stadium</h4>
+              <p>The original home of Gator baseball, named for Alfred McKethan, a banking magnate and ATO alumnus who was a major benefactor of Florida baseball. Replaced by Condron Family Ballpark in 2021.</p>
+            </div>
+          </div>
+
+          <!-- Lemerand -->
+          <div class="legacy-card">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg, var(--ato-dark-blue), var(--ato-azure));display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:2rem;color:rgba(255,255,255,0.1);">ΑΤΩ</div>
+            <div class="legacy-card-overlay">
+              <span class="legacy-tag">Athletic Infrastructure</span>
+              <h4>Lemerand Athletic Center</h4>
+              <p>Named for L. Gale Lemerand, a major donor and honorary ATO initiate whose extensive philanthropy toward Gator athletics helped build world-class training facilities.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
