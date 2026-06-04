@@ -1,0 +1,33 @@
+  <!-- ========================================
+       CAREER SECTION
+       ======================================== -->
+  <section class="section bg-white" id="career">
+    <div class="container">
+      <div class="fade-in">
+        <span class="section-label">Career</span>
+        <h2 class="section-heading">America's <em>Leadership Development</em> Fraternity</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="career-top fade-in">
+        <div>
+          <div class="section-body">
+            <p>Alpha Tau Omega's mission as America's Leadership Development Fraternity extends beyond the college years. The Alpha Omega chapter provides brothers with mentorship, networking, and professional development opportunities that prepare them for careers across every industry.</p>
+            <p>From alumni-led workshops and resume reviews to industry panels featuring brothers who have built careers in law, medicine, finance, technology, construction, and public service, our career programming connects current members with the resources and relationships they need to compete at the highest level.</p>
+            <p>The bonds of brotherhood become a professional network that lasts a lifetime.</p>
+          </div>
+        </div>
+        <div class="career-internship-img" data-lightbox>
+          <img src="{{ site.data.galleries.career_featured.src }}" alt="{{ site.data.galleries.career_featured.alt }}" loading="lazy" decoding="async">
+        </div>
+      </div>
+
+      <div class="career-portraits fade-in">
+        {% for photo in site.data.galleries.career %}
+        <div class="photo-item" data-lightbox>
+          <img src="{{ photo.src }}" alt="{{ photo.alt }}" loading="lazy" decoding="async">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>

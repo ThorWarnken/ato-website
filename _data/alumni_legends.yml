@@ -1,0 +1,81 @@
+items:
+  - name: "Steve Spurrier"
+    photo: "assets/Career/i.jpg"
+    photo_position: ""
+    badge: "Class of 1966 &middot; Heisman Trophy"
+    title: "The only player-turned-head-coach to win both a Heisman Trophy and a National Championship at Florida. Six-time SEC Champion. College Football Hall of Famer."
+    bio: "Spurrier won the 1966 Heisman as quarterback - the first in UF history - then returned to lead the Gators to six SEC titles and the 1996 National Championship as head coach from 1990 to 2001. His legacy is woven into the fabric of both UF athletics and Alpha Tau Omega."
+    featured: true
+    row: 0
+
+  - name: "Lawton Chiles"
+    photo: "assets/About Our Alumni/lawton-chiles.jpg"
+    photo_position: "center 10%"
+    badge: "Class of 1953 &middot; Governor of Florida"
+    title: "U.S. Senator for 18 years. Governor of Florida from 1991 to 1998."
+    bio: "Known as \"Walkin' Lawton\" after walking 1,003 miles across Florida to campaign, Chiles served three terms in the U.S. Senate before returning home to serve two terms as Governor."
+    featured: false
+    row: 0
+
+  - name: "Stephen C. O'Connell"
+    photo: "assets/About Our Alumni/stephen-oconnell.jpg"
+    photo_position: "center 20%"
+    badge: "Class of 1940 &middot; Chief Justice &middot; UF President"
+    title: "Chief Justice of the Florida Supreme Court. 6th President of the University of Florida. The O'Connell Center bears his name."
+    bio: "Alpha Omega chapter president, student body president, and SEC middleweight boxing champion during his time at UF. He went on to lead the Florida Supreme Court before returning to UF as its sixth president."
+    featured: false
+    row: 0
+
+  - name: "Cris Collinsworth"
+    photo: "assets/Career/Cris_Collinsworth_Super_Bowl_XLIII_kqqFq4RdG3pl.webp"
+    photo_position: "center 20%"
+    badge: "Class of 1981 &middot; Pro Bowler &middot; Broadcaster"
+    title: "Three-time Pro Bowl wide receiver. Lead NFL analyst for NBC's Sunday Night Football."
+    bio: ""
+    featured: false
+    row: 1
+
+  - name: "Tommy Townsend"
+    photo: "assets/Career/IMG_7571.jpg"
+    photo_position: "center 25%"
+    badge: "Class of 2020 &middot; 2&times; Super Bowl Champion"
+    title: "Back-to-back Super Bowl Champion. First-Team All-Pro punter. Walked on at Florida, became an NFL star."
+    bio: ""
+    featured: false
+    row: 1
+
+  - name: "Stephen H. Grimes"
+    photo: "assets/About Our Alumni/stephen-grimes.jpg"
+    photo_position: "center 25%"
+    badge: "Class of 1951 &middot; Chief Justice"
+    title: "Chief Justice of the Florida Supreme Court from 1994 to 1996. Served on the court from 1987 until his retirement."
+    bio: ""
+    featured: false
+    row: 1
+
+  - name: "Jack Youngblood"
+    photo: "assets/About Our Alumni/jack-youngblood.jpg"
+    photo_position: "center 10%"
+    badge: "Class of 1971 &middot; Pro Football Hall of Fame"
+    title: "College Football Hall of Famer. Seven-time Pro Bowler. Los Angeles Rams legend who played 14 NFL seasons at defensive end."
+    bio: "Youngblood was a consensus All-American at Florida before being drafted 20th overall by the Rams in 1971. Famous for playing the entire 1979 playoffs - including the Super Bowl - on a broken leg. Inducted into both the College and Pro Football Halls of Fame."
+    featured: false
+    row: 2
+
+  - name: "Chesterfield Smith"
+    photo: "assets/About Our Alumni/chesterfield-smith.jpg"
+    photo_position: "center 20%"
+    badge: "Class of 1942 &middot; ABA President"
+    title: "Co-founder of Holland &amp; Knight. President of the American Bar Association during Watergate. Known as \"America's Lawyer.\""
+    bio: "Smith's declaration that \"no man is above the law\" during the Watergate crisis drew national headlines and helped define a generation of American legal ethics. He built Holland &amp; Knight from a regional Florida firm into a national powerhouse."
+    featured: false
+    row: 2
+
+  - name: "Forrest Sawyer"
+    photo: "assets/About Our Alumni/forrest-sawyer-2.jpg"
+    photo_position: "center 15%"
+    badge: "Class of 1968 &middot; 8&times; Emmy Winner"
+    title: "ABC News correspondent and anchor of Nightline and World News Tonight. Eight-time Emmy Award winner."
+    bio: "Sawyer spent 12 years at ABC News covering major global events. He also earned a Peabody Award and an Edward R. Murrow Award, becoming one of the most decorated broadcast journalists of his era."
+    featured: false
+    row: 2

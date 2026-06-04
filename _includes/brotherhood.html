@@ -1,0 +1,21 @@
+  <!-- ========================================
+       BROTHERHOOD SECTION
+       ======================================== -->
+  <section class="section bg-off-white" id="brotherhood">
+    <div class="container">
+      <div class="gallery-intro fade-in">
+        <span class="section-label">Brotherhood</span>
+        <h2 class="section-heading">More Than a <em>Chapter</em></h2>
+        <div class="section-divider" style="margin-left:auto;margin-right:auto;"></div>
+        <p class="section-body" style="text-align:center;margin:0 auto;">Our 155 brothers are involved across campus and connected through the things that matter.</p>
+      </div>
+
+      <div class="photo-grid brotherhood-grid fade-in">
+        {% for photo in site.data.galleries.brotherhood %}
+        <div class="photo-item" data-lightbox>
+          <img src="{{ photo.src }}" alt="{{ photo.alt }}" loading="lazy" decoding="async">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>

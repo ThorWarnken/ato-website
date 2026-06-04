@@ -1,0 +1,16 @@
+items:
+  - number: "01"
+    title: "Leadership Development"
+    description: "ATO is America's Leadership Development Fraternity. National programs like LeaderShape and the Leadership Academy are available only to Taus."
+
+  - number: "02"
+    title: "Life Loyal Tau"
+    description: "Lifetime membership in ATO's global alumni association. Stay connected to over 250,000 living brothers across every major industry."
+
+  - number: "03"
+    title: "Career Network"
+    description: "Alumni-led workshops, resume reviews, and direct referrals into law, finance, medicine, construction, technology, and public service."
+
+  - number: "04"
+    title: "ATO Foundation"
+    description: "Scholarships, educational programming, and emergency assistance for brothers - funded by alumni who invest in the next generation of Taus."

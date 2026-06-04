@@ -1,0 +1,120 @@
+  <!-- ========================================
+       ALUMNI SECTION
+       ======================================== -->
+  <section class="section alumni-section" id="alumni">
+    <div class="container">
+      <div class="fade-in">
+        <span class="section-label">About Our Alumni</span>
+        <h2 class="section-heading">Men Who Shaped <em>History</em></h2>
+        <div class="section-divider"></div>
+        <p class="section-body">From Heisman Trophy winners and Florida governors to Supreme Court justices and industry leaders, the men of Alpha Omega have left an indelible mark on the University of Florida and the world beyond it.</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="alumni-tabs fade-in" role="tablist">
+        <button class="alumni-tab active" data-tab="legends" role="tab" aria-selected="true">Alumni Legends</button>
+        <button class="alumni-tab" data-tab="prominent" role="tab" aria-selected="false">Prominent Alumni</button>
+        <button class="alumni-tab" data-tab="campus" role="tab" aria-selected="false">Campus Legacy</button>
+      </div>
+
+      <!-- Legends Panel -->
+      <div class="alumni-panel active" id="panel-legends" role="tabpanel">
+        {% assign featured = site.data.alumni_legends.items | where: "row", 0 %}
+        <div class="legends-featured fade-in">
+          {% for legend in featured %}
+          <article class="legend-card{% if legend.featured %} hero-legend{% endif %}">
+            <img src="{{ legend.photo }}" alt="{{ legend.name }}"{% if legend.photo_position %} style="object-position: {{ legend.photo_position }};"{% endif %}>
+            <div class="legend-overlay">
+              <span class="legend-badge">{{ legend.badge }}</span>
+              <h3 class="legend-name">{{ legend.name }}</h3>
+              <p class="legend-title">{{ legend.title }}</p>
+              {% if legend.bio %}<p class="legend-bio">{{ legend.bio }}</p>{% endif %}
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+
+        {% assign row1 = site.data.alumni_legends.items | where: "row", 1 %}
+        <div class="legends-row fade-in">
+          {% for legend in row1 %}
+          <article class="legend-card">
+            <img src="{{ legend.photo }}" alt="{{ legend.name }}"{% if legend.photo_position %} style="object-position: {{ legend.photo_position }};"{% endif %}>
+            <div class="legend-overlay">
+              <span class="legend-badge">{{ legend.badge }}</span>
+              <h3 class="legend-name">{{ legend.name }}</h3>
+              <p class="legend-title">{{ legend.title }}</p>
+              {% if legend.bio %}<p class="legend-bio">{{ legend.bio }}</p>{% endif %}
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+
+        {% assign row2 = site.data.alumni_legends.items | where: "row", 2 %}
+        <div class="legends-row fade-in" style="margin-top: 1.25rem;">
+          {% for legend in row2 %}
+          <article class="legend-card">
+            <img src="{{ legend.photo }}" alt="{{ legend.name }}"{% if legend.photo_position %} style="object-position: {{ legend.photo_position }};"{% endif %}>
+            <div class="legend-overlay">
+              <span class="legend-badge">{{ legend.badge }}</span>
+              <h3 class="legend-name">{{ legend.name }}</h3>
+              <p class="legend-title">{{ legend.title }}</p>
+              {% if legend.bio %}<p class="legend-bio">{{ legend.bio }}</p>{% endif %}
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Prominent Panel -->
+      <div class="alumni-panel" id="panel-prominent" role="tabpanel">
+        <div class="alumni-grid fade-in">
+          {% for alum in site.data.alumni_prominent.items %}
+          <div class="alumni-card">
+            <div class="alumni-photo">
+              <img src="{{ alum.photo }}" alt="{{ alum.name }}" loading="lazy" decoding="async"{% if alum.photo_position %} style="object-position: {{ alum.photo_position }};"{% endif %}>
+            </div>
+            <div class="alumni-info">
+              <h4>{{ alum.name }}</h4>
+              <div class="alumni-title">{{ alum.title }}</div>
+              <p>{{ alum.bio }}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Campus Legacy Panel -->
+      <div class="alumni-panel" id="panel-campus" role="tabpanel">
+        <div class="legacy-intro fade-in">
+          <p>The Alpha Omega chapter has shaped the University of Florida in ways that go beyond the classroom. Buildings, stadiums, libraries, and training centers across campus bear the names of ATO brothers who gave back to the university they love.</p>
+        </div>
+
+        {% assign featured_legacy = site.data.alumni_campus_legacy.items | where: "featured", true | first %}
+        {% if featured_legacy %}
+        <div class="legacy-featured fade-in" data-lightbox>
+          <img src="{{ featured_legacy.photo }}" alt="{{ featured_legacy.name }}" loading="lazy" decoding="async">
+          <div class="legacy-featured-overlay">
+            <span class="legacy-tag">{{ featured_legacy.tag }}</span>
+            <h3>{{ featured_legacy.name }}</h3>
+            <p>{{ featured_legacy.description }}</p>
+          </div>
+        </div>
+        {% endif %}
+
+        <div class="legacy-grid fade-in">
+          {% for item in site.data.alumni_campus_legacy.items %}
+          {% unless item.featured %}
+          <div class="legacy-card" data-lightbox>
+            <img src="{{ item.photo }}" alt="{{ item.name }}" loading="lazy" decoding="async">
+            <div class="legacy-card-overlay">
+              <span class="legacy-tag">{{ item.tag }}</span>
+              <h4>{{ item.name }}</h4>
+              <p>{{ item.description }}</p>
+            </div>
+          </div>
+          {% endunless %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>

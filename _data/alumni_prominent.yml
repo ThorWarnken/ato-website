@@ -1,0 +1,36 @@
+items:
+  - name: "Scott Moss"
+    photo: "assets/About Our Alumni/scott-moss.jpg"
+    photo_position: "center 20%"
+    title: "CEO, Moss Construction"
+    bio: "Scott Moss leads Moss, a $3 billion national construction firm employing over 5,000 people. Inducted into the UF Rinker School of Construction Management Hall of Fame in 2024."
+
+  - name: "John Morgan"
+    photo: "assets/About Our Alumni/john-morgan.jpg"
+    photo_position: "center 10%"
+    title: "Founder, Morgan &amp; Morgan"
+    bio: "Founded Morgan &amp; Morgan, one of the largest personal injury law firms in the United States. UF College of Law graduate known for his philanthropy, advocacy, and outsized impact on Florida's legal landscape."
+
+  - name: "Blake Dowling"
+    photo: "assets/About Our Alumni/blake-dowling.png"
+    photo_position: "center 25%"
+    title: "CEO, Aegis Business Technologies"
+    bio: "CEO of Aegis Business Technologies, a Tallahassee-based managed IT services firm. Named to the 2025 Gator 100, the UF Alumni Association's list of fastest-growing businesses worldwide led by UF alumni."
+
+  - name: "Brian Natwick"
+    photo: "assets/About Our Alumni/brian-natwick.jpg"
+    photo_position: "center 20%"
+    title: "Investor &amp; Developer &middot; Former Chairman &amp; CEO, Crescent Communities"
+    bio: "Brian Natwick built a 30-year career in real estate representing over $10.5 billion in total capitalization. As Chairman, CEO, and President of Crescent Communities for 20 years, he created more than $750 million in shareholder equity and raised over $8 billion in third-party capital. A UF Construction Management graduate with highest honors, Brian previously held senior roles at Centex, Skanska, and Moss &amp; Associates."
+
+  - name: "Bob Schalow"
+    photo: "assets/About Our Alumni/bob-schalow.jpg"
+    photo_position: "center 15%"
+    title: "SVP of Operations, Diversified Restaurant Group"
+    bio: "A 21-year Taco Bell veteran who held 14 different titles during his tenure with the brand, Bob Schalow now serves as Senior Vice President of Operations at Diversified Restaurant Group, overseeing 100+ Taco Bell locations across the West Coast. A UF graduate, he also serves as an Adjunct Lecturer for the University of Florida's Master of Science in Tourism and Hospitality Management program."
+
+  - name: "Arnie Bellini"
+    photo: "assets/About Our Alumni/arnie-bellini.jpg"
+    photo_position: "center 20%"
+    title: "Founder, ConnectWise &middot; CEO, Bellini Capital"
+    bio: "Arnie Bellini founded ConnectWise in 1982 and grew it into the leading business management platform for IT companies worldwide. The company sold for $1.5 billion in 2019, becoming Tampa Bay's first tech unicorn. A UF accounting graduate, Bellini has since donated over $50 million to higher education, including a $40 million gift to establish the first college in the U.S. dedicated to AI and cybersecurity."

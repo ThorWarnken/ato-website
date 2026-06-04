@@ -1,0 +1,42 @@
+  <!-- ========================================
+       PHILANTHROPY SECTION
+       ======================================== -->
+  <section class="section philanthropy-section" id="philanthropy">
+    <div class="container">
+      <div class="fade-in">
+        <span class="section-label">Philanthropy</span>
+        <h2 class="section-heading">A Cause That Hits <em>Close to Home</em></h2>
+        <div class="section-divider" style="background:var(--ato-evergreen);"></div>
+      </div>
+
+      <div class="philanthropy-hero fade-in">
+        <div class="philanthropy-featured">
+          <img src="assets/Philanthropy/IMG_7543.jpg" alt="AdventHealth Orlando Casino Night - $127,721 raised" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <div class="section-body">
+            <p>In 2022, a brother in our chapter was diagnosed with cancer. The men of Alpha Omega responded by launching the AdventHealth Orlando Casino Night, a philanthropy event dedicated to funding cancer research at AdventHealth Orlando.</p>
+            <p>Now in its fourth year, Casino Night raised $127,000 this year alone for AdventHealth Orlando's cancer research department. The event brings together the Greek community and beyond for an evening of casino-style entertainment in support of a cause that hits close to home.</p>
+            <p>Beyond Casino Night, our chapter gives back through community service projects, volunteer days, and partnerships with local organizations in Gainesville.</p>
+          </div>
+
+          <div class="philanthropy-stats">
+            {% for stat in site.data.philanthropy_stats.items %}
+            <div class="philanthropy-stat">
+              <div class="stat-number">{{ stat.number }}</div>
+              <div class="stat-label">{{ stat.label }}</div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="philanthropy-photos fade-in">
+        {% for photo in site.data.galleries.philanthropy %}
+        <div class="photo-item" data-lightbox>
+          <img src="{{ photo.src }}" alt="{{ photo.alt }}" loading="lazy" decoding="async">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
